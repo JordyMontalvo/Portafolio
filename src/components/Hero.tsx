@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-teal-600 dark:text-teal-400 font-semibold mb-4 animate-fadeIn">Hello, I'm</p>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-800 dark:text-white mb-4 animate-fadeIn">
-            [Your Name]
+            Jordy Montalvo 
           </h1>
           <div className="h-8 md:h-12">
             <h2 className="text-2xl md:text-4xl font-medium text-slate-600 dark:text-slate-300 animate-fadeIn inline-block">
@@ -76,13 +76,13 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="mt-10 flex justify-center space-x-6 animate-fadeIn">
-            <a href="https://github.com" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
+            <a href="https://github.com/JordyMontalvo" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
               <Github className="h-6 w-6" />
             </a>
-            <a href="https://linkedin.com" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
+            <a href="https://www.linkedin.com/in/jordy-joseph-montalvo-/" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="mailto:email@example.com" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
+            <a href="" className="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition duration-300">
               <Mail className="h-6 w-6" />
             </a>
           </div>
