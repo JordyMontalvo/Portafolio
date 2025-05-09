@@ -28,7 +28,7 @@ const About: React.FC = () => {
               </h3>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
                 I'm a passionate software engineer with a keen eye for creating elegant, efficient, and user-friendly 
-                solutions. With [X] years of experience in the industry, I've worked across the full stack development 
+                solutions. With 2 years of experience in the industry, I've worked across the full stack development 
                 lifecycle, from concept to deployment.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-6">
@@ -40,19 +40,19 @@ const About: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center">
                   <Briefcase className="w-5 h-5 text-teal-500 mr-2" />
-                  <span className="text-slate-700 dark:text-slate-300">[X] Years Experience</span>
+                  <span className="text-slate-700 dark:text-slate-300">2 Years Experience</span>
                 </div>
                 <div className="flex items-center">
                   <GraduationCap className="w-5 h-5 text-teal-500 mr-2" />
-                  <span className="text-slate-700 dark:text-slate-300">[Degree/Education]</span>
+                  <span className="text-slate-700 dark:text-slate-300">UPC</span>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-5 h-5 text-teal-500 mr-2" />
-                  <span className="text-slate-700 dark:text-slate-300">[Location]</span>
+                  <span className="text-slate-700 dark:text-slate-300">Lima, Peru</span>
                 </div>
                 <div className="flex items-center">
                   <Coffee className="w-5 h-5 text-teal-500 mr-2" />
-                  <span className="text-slate-700 dark:text-slate-300">[Hobby/Interest]</span>
+                  <span className="text-slate-700 dark:text-slate-300">videogames, football, coding</span>
                 </div>
               </div>
             </div>

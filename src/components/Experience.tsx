@@ -15,10 +15,10 @@ const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
-      role: "Senior Software Engineer",
-      company: "Tech Company ABC",
-      location: "San Francisco, CA",
-      period: "2021 - Present",
+      role: "Software Engineer",
+      company: "VII next sac",
+      location: "Lima, Peru",
+      period: "2024 - Present",
       description: [
         "Led the development of a microservices architecture that improved system reliability by 35%",
         "Mentored junior developers and conducted code reviews to maintain code quality",
@@ -30,8 +30,8 @@ const Experience: React.FC = () => {
       id: 2,
       role: "Software Developer",
       company: "Startup XYZ",
-      location: "Austin, TX",
-      period: "2018 - 2021",
+      location: "Lima, Peru",
+      period: "2024 - 2024",
       description: [
         "Developed responsive web applications using modern JavaScript frameworks",
         "Designed and implemented RESTful APIs for mobile and web clients",
@@ -43,8 +43,8 @@ const Experience: React.FC = () => {
       id: 3,
       role: "Junior Web Developer",
       company: "Digital Agency",
-      location: "Chicago, IL",
-      period: "2016 - 2018",
+      location: "Lima, Peru",
+      period: "2023 - 2024",
       description: [
         "Built and maintained client websites using modern web technologies",
         "Collaborated with designers to implement responsive UI components",

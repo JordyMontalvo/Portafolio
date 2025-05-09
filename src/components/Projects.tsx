@@ -22,8 +22,8 @@ const Projects: React.FC = () => {
       description: "A full-stack e-commerce application with product listings, cart functionality, user authentication, and payment processing.",
       image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       tags: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com",
-      demo: "https://demo-link.com",
+      github: "https://github.com/JordyMontalvo/Sifrah_app",
+      demo: "https://sifrah-test-app.vercel.app/dashboard",
       featured: true
     },
     {
@@ -157,7 +157,7 @@ const Projects: React.FC = () => {
         
         <div className="text-center mt-12">
           <a 
-            href="https://github.com" 
+            href="https://github.com/JordyMontalvo" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="inline-flex items-center px-6 py-3 bg-slate-800 dark:bg-white text-white dark:text-slate-800 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-100 transition duration-300 shadow-lg hover:shadow-xl font-medium"
