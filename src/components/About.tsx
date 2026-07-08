@@ -12,10 +12,11 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="aspect-square rounded-xl bg-slate-200 dark:bg-slate-800 overflow-hidden shadow-xl">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-300 to-slate-100 dark:from-slate-700 dark:to-slate-900">
-                  <span className="text-6xl text-slate-500 dark:text-slate-400">[Photo]</span>
-                </div>
+                <img 
+                  src="/avatar_pro.png" 
+                  alt="Jordy Montalvo" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-teal-500 rounded-xl flex items-center justify-center shadow-lg">
                 <Code className="w-12 h-12 text-white" />
