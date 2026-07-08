@@ -10,27 +10,29 @@ interface Skill {
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
-    // Frontend
-    { name: 'HTML/CSS', level: 90, icon: <Layout className="w-5 h-5" />, category: 'Frontend' },
-    { name: 'JavaScript', level: 85, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
-    { name: 'React', level: 80, icon: <Monitor className="w-5 h-5" />, category: 'Frontend' },
+    // E-commerce & CMS
+    { name: 'Shopify Plus', level: 95, icon: <Monitor className="w-5 h-5" />, category: 'E-commerce' },
+    { name: 'WordPress', level: 90, icon: <Layout className="w-5 h-5" />, category: 'E-commerce' },
+    { name: 'Liquid', level: 90, icon: <Code2 className="w-5 h-5" />, category: 'E-commerce' },
+    { name: 'WooCommerce', level: 85, icon: <Database className="w-5 h-5" />, category: 'E-commerce' },
+    
+    // Core Web
+    { name: 'JavaScript (ES6+)', level: 85, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
     { name: 'TypeScript', level: 75, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'HTML5/CSS3', level: 95, icon: <Layout className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'React', level: 80, icon: <Monitor className="w-5 h-5" />, category: 'Frontend' },
     
-    // Backend
-    { name: 'Node.js', level: 80, icon: <Server className="w-5 h-5" />, category: 'Backend' },
-    { name: 'Python', level: 70, icon: <Code2 className="w-5 h-5" />, category: 'Backend' },
-    { name: 'Express', level: 75, icon: <Server className="w-5 h-5" />, category: 'Backend' },
-    { name: 'APIs', level: 85, icon: <Server className="w-5 h-5" />, category: 'Backend' },
+    // Backend & APIs
+    { name: 'PHP', level: 85, icon: <Server className="w-5 h-5" />, category: 'Backend' },
+    { name: 'Node.js', level: 75, icon: <Server className="w-5 h-5" />, category: 'Backend' },
+    { name: 'REST/GraphQL', level: 80, icon: <BrainCircuit className="w-5 h-5" />, category: 'Backend' },
+    { name: 'MySQL', level: 80, icon: <Database className="w-5 h-5" />, category: 'Backend' },
     
-    // Database
-    { name: 'SQL', level: 80, icon: <Database className="w-5 h-5" />, category: 'Database' },
-    { name: 'MongoDB', level: 75, icon: <Database className="w-5 h-5" />, category: 'Database' },
-    
-    // Other
-    { name: 'Git/GitHub', level: 85, icon: <Code2 className="w-5 h-5" />, category: 'Other' },
-    { name: 'DevOps', level: 65, icon: <Gauge className="w-5 h-5" />, category: 'Other' },
-    { name: 'Testing', level: 70, icon: <ShieldCheck className="w-5 h-5" />, category: 'Other' },
-    { name: 'AI/ML', level: 60, icon: <BrainCircuit className="w-5 h-5" />, category: 'Other' },
+    // Tools & Performance
+    { name: 'Tech SEO', level: 90, icon: <Gauge className="w-5 h-5" />, category: 'Tools' },
+    { name: 'GA4 / GTM', level: 85, icon: <ShieldCheck className="w-5 h-5" />, category: 'Tools' },
+    { name: 'Git/GitHub', level: 85, icon: <Code2 className="w-5 h-5" />, category: 'Tools' },
+    { name: 'Linux/cPanel', level: 75, icon: <Server className="w-5 h-5" />, category: 'Tools' },
   ];
 
   // Group skills by category

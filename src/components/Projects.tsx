@@ -18,43 +18,33 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce application with product listings, cart functionality, user authentication, and payment processing.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/JordyMontalvo/Sifrah_app",
-      demo: "https://sifrah-test-app.vercel.app/dashboard",
+      title: "Shopify Plus Migration",
+      description: "Led the complete migration of a Magento store to Shopify Plus for an international brand. Developed a custom Liquid theme with real-time ERP integrations.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+      tags: ["Shopify", "Liquid", "APIs"],
+      github: "https://github.com/JordyMontalvo",
+      demo: "https://shopify.com",
       featured: true
     },
     {
       id: 2,
-      title: "Task Management Dashboard",
-      description: "A project management tool with drag-and-drop interface, team collaboration features, and real-time updates.",
-      image: "https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      tags: ["React", "Firebase", "TypeScript"],
-      github: "https://github.com",
-      demo: "https://demo-link.com",
+      title: "B2B Corporate Redesign",
+      description: "Architecture of a multi-language platform using WordPress, ACF, and Elementor. Aggressively optimized Core Web Vitals, reducing LCP to under 1.2s.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      tags: ["WordPress", "PHP", "SEO"],
+      github: "https://github.com/JordyMontalvo",
+      demo: "https://wordpress.org",
       featured: true
     },
     {
       id: 3,
-      title: "Weather Forecast App",
-      description: "A responsive weather application that provides current conditions and forecasts based on user location.",
-      image: "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      tags: ["JavaScript", "API Integration"],
-      github: "https://github.com",
+      title: "Headless Analytics Ecosystem",
+      description: "Implementation of a data measurement ecosystem (custom DataLayer) using GTM and GA4. Integrated with Meta Pixel and Klaviyo for automated funnels.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      tags: ["GA4", "GTM", "Analytics"],
+      github: "https://github.com/JordyMontalvo",
       featured: false
-    },
-    {
-      id: 4,
-      title: "Fitness Tracking Platform",
-      description: "A comprehensive fitness tracking application with workout plans, progress monitoring, and social features.",
-      image: "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      tags: ["React Native", "Node.js", "MongoDB"],
-      github: "https://github.com",
-      demo: "https://demo-link.com",
-      featured: true
-    },
+    }
   ];
 
   // Get all unique tags from projects
