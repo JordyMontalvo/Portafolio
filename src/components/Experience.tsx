@@ -15,42 +15,42 @@ const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
-      role: "Software Engineer",
-      company: "VII next sac",
-      location: "Lima, Peru",
-      period: "2024 - Present",
+      role: "Lead Shopify Developer",
+      company: "Fuxion",
+      location: "Remote",
+      period: "2020 - Present",
       description: [
-        "Led the development of a microservices architecture that improved system reliability by 35%",
-        "Mentored junior developers and conducted code reviews to maintain code quality",
-        "Implemented automated CI/CD pipelines that reduced deployment time by 40%"
+        "Technical leadership in creating and scaling high-traffic stores on Shopify and WooCommerce.",
+        "Advanced development of custom themes using Liquid, HTML5, CSS3, and modern JavaScript.",
+        "Integration of complex APIs (ERPs, CRMs) and severe optimization of Core Web Vitals (60% load reduction)."
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes"]
+      technologies: ["Shopify", "Liquid", "JavaScript", "HTML/CSS", "APIs"]
     },
     {
       id: 2,
-      role: "Software Developer",
-      company: "Startup XYZ",
+      role: "Senior Full Stack Developer",
+      company: "Corporate Consulting",
       location: "Lima, Peru",
-      period: "2024 - 2024",
+      period: "2020 - 2022",
       description: [
-        "Developed responsive web applications using modern JavaScript frameworks",
-        "Designed and implemented RESTful APIs for mobile and web clients",
-        "Contributed to open-source projects and maintained documentation"
+        "Comprehensive development of corporate websites and custom virtual stores.",
+        "Built over 50 websites using WordPress, PHP, and Advanced Custom Fields (ACF).",
+        "Pixel-Perfect interfaces from Figma designs and aggressive technical SEO practices."
       ],
-      technologies: ["JavaScript", "React", "Express", "MongoDB", "Git"]
+      technologies: ["WordPress", "PHP", "SEO", "Elementor", "cPanel"]
     },
     {
       id: 3,
-      role: "Junior Web Developer",
-      company: "Digital Agency",
+      role: "Web Developer & Support",
+      company: "Tech Startup",
       location: "Lima, Peru",
-      period: "2023 - 2024",
+      period: "2020 - 2021",
       description: [
-        "Built and maintained client websites using modern web technologies",
-        "Collaborated with designers to implement responsive UI components",
-        "Optimized website performance through code refactoring and best practices"
+        "Maintenance of in-house systems and development of high-converting Landing Pages.",
+        "Object-Oriented Programming in PHP and agile resolution of technical incidents.",
+        "Constant collaboration under agile methodologies (Scrum) using tools like Jira and Git."
       ],
-      technologies: ["HTML/CSS", "JavaScript", "PHP", "WordPress"]
+      technologies: ["PHP", "MySQL", "JavaScript", "Git", "Jira"]
     }
   ];
 

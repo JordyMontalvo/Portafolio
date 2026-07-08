@@ -28,19 +28,19 @@ const About: React.FC = () => {
               </h3>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
                 I'm a passionate software engineer with a keen eye for creating elegant, efficient, and user-friendly 
-                solutions. With 2 years of experience in the industry, I've worked across the full stack development 
-                lifecycle, from concept to deployment.
+                solutions. With over 4 years of experience since 2020, I've worked across the full stack development 
+                lifecycle, specializing in enterprise-grade E-commerce architecture.
               </p>
               <p className="text-slate-600 dark:text-slate-300 mb-6">
-                My journey in technology began with [your background story]. Today, I specialize in 
-                [your specializations] and am constantly exploring new technologies and methodologies 
-                to enhance my skill set.
+                My journey in technology began developing simple corporate sites. Today, I specialize in 
+                Shopify Plus, Liquid, and high-performance WordPress systems, constantly pushing the limits of
+                Core Web Vitals and conversion rates.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center">
                   <Briefcase className="w-5 h-5 text-teal-500 mr-2" />
-                  <span className="text-slate-700 dark:text-slate-300">2 Years Experience</span>
+                  <span className="text-slate-700 dark:text-slate-300">4+ Years Experience</span>
                 </div>
                 <div className="flex items-center">
                   <GraduationCap className="w-5 h-5 text-teal-500 mr-2" />

@@ -44,8 +44,7 @@ const Hero: React.FC = () => {
           </div>
           
           <p className="mt-6 text-slate-600 dark:text-slate-400 text-lg animate-fadeIn max-w-2xl mx-auto">
-            Passionate about creating elegant solutions to complex problems. Specializing in 
-            building exceptional digital experiences with cutting-edge technologies.
+            Senior Specialist in enterprise web architectures. I transform complex Figma designs into high-performance Shopify Plus stores and WordPress platforms, maximizing speed and conversion rates.
           </p>
           
           <div className="mt-8 flex justify-center space-x-4 animate-fadeIn">
