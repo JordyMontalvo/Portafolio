@@ -12,47 +12,6 @@ function App() {
   useEffect(() => {
     // Update title
     document.title = 'Software Engineer Portfolio';
-    
-    // Add global styles
-    const style = document.createElement('style');
-    style.innerHTML = `
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      .animate-fadeIn {
-        animation: fadeIn 1s ease-in-out;
-      }
-      
-      .animate-blink {
-        animation: blink 1s step-end infinite;
-      }
-      
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes blink {
-        0%, 100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
   }, []);
 
   return (

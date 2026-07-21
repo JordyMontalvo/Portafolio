@@ -78,9 +78,6 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-10 pt-8 border-t border-slate-700 flex flex-col items-center">
-          <p className="flex items-center text-slate-400">
-            Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> by [Your Name]
-          </p>
           <p className="mt-2 text-sm text-slate-500">
             © {currentYear} All Rights Reserved
           </p>
