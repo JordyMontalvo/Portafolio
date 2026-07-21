@@ -54,6 +54,15 @@ const Projects: React.FC = () => {
       tags: ["Vue.js", "Web Portal", "Education"],
       demo: "https://portalbibliotecas.aiep.cl/",
       featured: true
+    },
+    {
+      id: 5,
+      title: "Sifrah - Full-Stack MLM Platform",
+      description: "Complete Multi-Level Marketing (MLM) platform. The frontend features a Vue.js & Vuex SPA with commission charts, interactive genealogy trees, and dashboards. The backend runs on Node.js/Express, utilizing MongoDB, Prisma ORM, and integrates MercadoPago for automated payouts and Nodemailer for communications.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      tags: ["Vue.js", "Node.js", "MongoDB", "Prisma", "MercadoPago"],
+      demo: "http://sifrah.vercel.app/",
+      featured: true
     }
   ];
 
