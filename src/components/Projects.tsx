@@ -52,6 +52,7 @@ const Projects: React.FC = () => {
       description: "Development of the official library portal for AIEP students and teachers. Provides access to digital resources, career bibliography, and study room management.",
       image: "https://portalbibliotecas.aiep.cl/img/og-biblioteca-aiep.jpg",
       tags: ["Vue.js", "Web Portal", "Education"],
+      github: "https://github.com/PedroFlores28/DisenoBiblioteca",
       demo: "https://portalbibliotecas.aiep.cl/",
       featured: true
     },
@@ -61,7 +62,18 @@ const Projects: React.FC = () => {
       description: "Complete Multi-Level Marketing (MLM) platform. The frontend features a Vue.js & Vuex SPA with commission charts, interactive genealogy trees, and dashboards. The backend runs on Node.js/Express, utilizing MongoDB, Prisma ORM, and integrates MercadoPago for automated payouts and Nodemailer for communications.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
       tags: ["Vue.js", "Node.js", "MongoDB", "Prisma", "MercadoPago"],
+      github: "https://github.com/JordyMontalvo/Sifrah_app",
       demo: "http://sifrah.vercel.app/",
+      featured: true
+    },
+    {
+      id: 6,
+      title: "Semilla de Compromisos - UNACEM",
+      description: "Immersive interactive web experience developed for UNACEM's THM event. Participants register personal commitments through a game-like narrative featuring a dynamic animated seed. Built with React, TypeScript, and Framer Motion for highly fluid, physics-based animations.",
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/JordyMontalvo/exp_semilla",
+      demo: "https://serve-unacem.vercel.app/es",
       featured: true
     }
   ];
