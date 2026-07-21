@@ -42,6 +42,7 @@ const Hero: React.FC = () => {
       className="h-screen relative flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-200 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large Background Orbs */}
         <motion.div 
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -52,6 +53,31 @@ const Hero: React.FC = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-orange-500/20 to-pink-500/10 rounded-full blur-3xl"
         />
+        
+        {/* Small floating particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-teal-400/40 blur-[2px]"
+            style={{
+              width: Math.random() * 10 + 5 + 'px',
+              height: Math.random() * 10 + 5 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+            }}
+            animate={{
+              y: [0, Math.random() * -100 - 50],
+              x: [0, Math.random() * 50 - 25],
+              opacity: [0, 0.8, 0],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
       </div>
       
       <motion.div 
@@ -79,7 +105,7 @@ const Hero: React.FC = () => {
             Senior Specialist in enterprise web architectures. I transform complex Figma designs into high-performance Shopify Plus stores and WordPress platforms, maximizing speed and conversion rates.
           </motion.p>
           
-          <motion.div variants={itemVariants} className="mt-8 flex justify-center space-x-4">
+          <motion.div variants={itemVariants} className="mt-8 flex flex-wrap justify-center gap-4">
             <a 
               href="#contact" 
               className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl font-medium"
@@ -103,6 +129,17 @@ const Hero: React.FC = () => {
               }}
             >
               View Projects
+            </a>
+            <a 
+              href="https://github.com/JordyMontalvo/cv_generetor"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition duration-300 shadow-lg hover:shadow-xl hover:shadow-teal-500/20 font-medium flex items-center gap-2 group"
+            >
+              <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              CV Tailor AI
             </a>
           </motion.div>
           

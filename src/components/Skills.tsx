@@ -17,16 +17,17 @@ const Skills: React.FC = () => {
     { name: 'Liquid', level: 90, icon: <Code2 className="w-5 h-5" />, category: 'E-commerce' },
     { name: 'WooCommerce', level: 85, icon: <Database className="w-5 h-5" />, category: 'E-commerce' },
     
-    // Core Web
-    { name: 'JavaScript (ES6+)', level: 85, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
-    { name: 'TypeScript', level: 75, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
-    { name: 'HTML5/CSS3', level: 95, icon: <Layout className="w-5 h-5" />, category: 'Frontend' },
-    { name: 'React', level: 80, icon: <Monitor className="w-5 h-5" />, category: 'Frontend' },
+    // Core Web & Frontend
+    { name: 'JavaScript (ES6+)', level: 90, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'React & Framer Motion', level: 85, icon: <Monitor className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'Vue.js & Vuex', level: 85, icon: <Layout className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'TypeScript', level: 80, icon: <Code2 className="w-5 h-5" />, category: 'Frontend' },
     
     // Backend & APIs
+    { name: 'Node.js & Express', level: 85, icon: <Server className="w-5 h-5" />, category: 'Backend' },
     { name: 'PHP', level: 85, icon: <Server className="w-5 h-5" />, category: 'Backend' },
-    { name: 'Node.js', level: 75, icon: <Server className="w-5 h-5" />, category: 'Backend' },
-    { name: 'REST/GraphQL', level: 80, icon: <BrainCircuit className="w-5 h-5" />, category: 'Backend' },
+    { name: 'MongoDB & Prisma', level: 80, icon: <Database className="w-5 h-5" />, category: 'Backend' },
+    { name: 'REST APIs & Integrations', level: 85, icon: <BrainCircuit className="w-5 h-5" />, category: 'Backend' },
     { name: 'MySQL', level: 80, icon: <Database className="w-5 h-5" />, category: 'Backend' },
     
     // Tools & Performance
