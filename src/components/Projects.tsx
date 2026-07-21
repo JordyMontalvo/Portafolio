@@ -45,6 +45,15 @@ const Projects: React.FC = () => {
       tags: ["GA4", "GTM", "Analytics"],
       github: "https://github.com/JordyMontalvo",
       featured: false
+    },
+    {
+      id: 4,
+      title: "Bibliotecas AIEP Portal",
+      description: "Development of the official library portal for AIEP students and teachers. Provides access to digital resources, career bibliography, and study room management.",
+      image: "https://portalbibliotecas.aiep.cl/img/og-biblioteca-aiep.jpg",
+      tags: ["Vue.js", "Web Portal", "Education"],
+      demo: "https://portalbibliotecas.aiep.cl/",
+      featured: true
     }
   ];
 
