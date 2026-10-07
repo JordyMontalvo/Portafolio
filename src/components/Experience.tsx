@@ -11,6 +11,7 @@ interface ExperienceItem {
   impactHighlight: string;
   description: string[];
   technologies: string[];
+  recommendationLetter?: string;
 }
 
 const Experience: React.FC = () => {
@@ -27,7 +28,8 @@ const Experience: React.FC = () => {
         "Advanced custom theme engineering with Liquid, modern JavaScript, and Tailwind CSS.",
         "Complex bi-directional API synchronizations between Shopify, custom ERP systems, and CRM pipelines."
       ],
-      technologies: ["Shopify Plus", "Liquid", "Storefront API", "JavaScript", "REST APIs", "Tailwind CSS"]
+      technologies: ["Shopify Plus", "Liquid", "Storefront API", "JavaScript", "REST APIs", "Tailwind CSS"],
+      recommendationLetter: "/cartas/Carta_Recomendacion_Fuxion_Jordy_Montalvo.pdf"
     },
     {
       id: 2,
@@ -41,7 +43,8 @@ const Experience: React.FC = () => {
         "Engineered pixel-perfect component systems translating complex Figma designs with zero visual drift.",
         "Aggressive Core Web Vitals optimization, caching architectures, and technical SEO structure."
       ],
-      technologies: ["WordPress", "PHP", "ACF Pro", "MySQL", "Technical SEO", "JavaScript"]
+      technologies: ["WordPress", "PHP", "ACF Pro", "MySQL", "Technical SEO", "JavaScript"],
+      recommendationLetter: "/cartas/Carta_Recomendacion_Sifrah_Jordy_Montalvo.pdf"
     },
     {
       id: 3,
@@ -128,6 +131,18 @@ const Experience: React.FC = () => {
                       {tech}
                     </span>
                   ))}
+                  
+                  {exp.recommendationLetter && (
+                    <a
+                      href={exp.recommendationLetter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-auto inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 dark:bg-teal-900/30 hover:bg-teal-100 dark:hover:bg-teal-900/50 text-teal-700 dark:text-teal-300 text-xs font-semibold rounded-lg border border-teal-200 dark:border-teal-800/50 transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                      Ver Carta de Recomendación
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
