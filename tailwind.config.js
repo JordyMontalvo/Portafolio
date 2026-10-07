@@ -5,7 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Chivo', 'Figtree', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
         teal: {
@@ -21,23 +23,23 @@ export default {
           900: '#134e4a',
           950: '#042f2e',
         },
-      },
-      animation: {
-        fadeIn: 'fadeIn 1s ease-in-out',
-        blink: 'blink 1s step-end infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: 0, transform: 'translateY(20px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
-        },
-        blink: {
-          '0%, 100%': { opacity: 1 },
-          '50%': { opacity: 0 },
+        obsidian: {
+          700: '#1e293b',
+          800: '#111827',
+          850: '#0e1522',
+          900: '#090d16',
+          950: '#05080e',
         },
       },
       boxShadow: {
-        soft: '0 5px 15px rgba(0, 0, 0, 0.05)',
+        soft: '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+        glow: '0 10px 30px -5px rgba(20, 184, 166, 0.15)',
+        card: '0 8px 30px rgba(0, 0, 0, 0.08)',
+        'card-dark': '0 8px 30px rgba(0, 0, 0, 0.4)',
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
       },
     },
   },

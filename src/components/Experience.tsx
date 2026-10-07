@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ExperienceItem {
@@ -8,6 +8,7 @@ interface ExperienceItem {
   company: string;
   location: string;
   period: string;
+  impactHighlight: string;
   description: string[];
   technologies: string[];
 }
@@ -16,132 +17,121 @@ const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
-      role: "Lead Shopify Developer",
+      role: "Lead Shopify & E-Commerce Developer",
       company: "Fuxion",
-      location: "Remote",
-      period: "2020 - Present",
+      location: "Remote (Global)",
+      period: "2022 - Present",
+      impactHighlight: "60% Load Time Reduction & Enterprise ERP Automation",
       description: [
-        "Technical leadership in creating and scaling high-traffic stores on Shopify and WooCommerce.",
-        "Advanced development of custom themes using Liquid, HTML5, CSS3, and modern JavaScript.",
-        "Integration of complex APIs (ERPs, CRMs) and severe optimization of Core Web Vitals (60% load reduction)."
+        "Technical leadership in architecting and scaling enterprise storefronts on Shopify Plus and WooCommerce.",
+        "Advanced custom theme engineering with Liquid, modern JavaScript, and Tailwind CSS.",
+        "Complex bi-directional API synchronizations between Shopify, custom ERP systems, and CRM pipelines."
       ],
-      technologies: ["Shopify", "Liquid", "JavaScript", "HTML/CSS", "APIs"]
+      technologies: ["Shopify Plus", "Liquid", "Storefront API", "JavaScript", "REST APIs", "Tailwind CSS"]
     },
     {
       id: 2,
-      role: "Senior Full Stack Developer",
+      role: "Senior Full Stack & CMS Engineer",
       company: "Corporate Consulting",
       location: "Lima, Peru",
       period: "2020 - 2022",
+      impactHighlight: "50+ Production Platforms Delivered & Sub-1.2s LCP",
       description: [
-        "Comprehensive development of corporate websites and custom virtual stores.",
-        "Built over 50 websites using WordPress, PHP, and Advanced Custom Fields (ACF).",
-        "Pixel-Perfect interfaces from Figma designs and aggressive technical SEO practices."
+        "Comprehensive architecture of multi-language enterprise web platforms using WordPress, PHP, and ACF Pro.",
+        "Engineered pixel-perfect component systems translating complex Figma designs with zero visual drift.",
+        "Aggressive Core Web Vitals optimization, caching architectures, and technical SEO structure."
       ],
-      technologies: ["WordPress", "PHP", "SEO", "Elementor", "cPanel"]
+      technologies: ["WordPress", "PHP", "ACF Pro", "MySQL", "Technical SEO", "JavaScript"]
     },
     {
       id: 3,
-      role: "Web Developer & Support",
+      role: "Web Developer & Systems Engineer",
       company: "Tech Startup",
       location: "Lima, Peru",
       period: "2020 - 2021",
+      impactHighlight: "High-Converting Landing Pages & Agile Delivery",
       description: [
-        "Maintenance of in-house systems and development of high-converting Landing Pages.",
-        "Object-Oriented Programming in PHP and agile resolution of technical incidents.",
-        "Constant collaboration under agile methodologies (Scrum) using tools like Jira and Git."
+        "Full lifecycle development of high-conversion marketing funnels and internal portal tools.",
+        "Object-Oriented PHP development, MySQL schema queries, and rapid issue resolution.",
+        "Cross-functional collaboration under Agile/Scrum with continuous git-based releases."
       ],
-      technologies: ["PHP", "MySQL", "JavaScript", "Git", "Jira"]
+      technologies: ["PHP", "MySQL", "JavaScript", "Git", "Jira", "Linux"]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-800 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-white mb-2">Work Experience</h2>
-          <div className="w-16 h-1 bg-teal-500 mx-auto mb-10"></div>
-        </motion.div>
-        
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <motion.div 
-              initial={{ height: 0 }}
-              whileInView={{ height: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-slate-300 dark:bg-slate-600 origin-top"
-            />
-            
-            {/* Experience items */}
-            {experiences.map((exp, index) => (
-              <motion.div 
-                key={exp.id} 
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
-                className={`relative z-10 mb-12 md:mb-20 ${
-                  index % 2 === 0 ? 'md:pr-12 md:text-right md:ml-auto' : 'md:pl-12'
-                } md:w-1/2`}
-              >
-                {/* Timeline dot */}
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5, type: "spring" }}
-                  className="absolute top-0 md:top-1/2 left-0 md:left-auto md:transform md:-translate-y-1/2 w-4 h-4 rounded-full bg-teal-500 shadow-[0_0_0_4px_rgba(20,184,166,0.2)] hidden md:block" 
-                  style={{ 
-                    [index % 2 === 0 ? 'right' : 'left']: '-8px' 
-                  }}
-                />
-                
-                {/* Experience card */}
-                <div className="ml-8 md:ml-0 bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-800">
-                  <div className="md:flex md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-bold text-slate-800 dark:text-white">{exp.role}</h3>
-                    <div className="inline-flex items-center justify-center px-3 py-1 mt-2 md:mt-0 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-400 text-sm font-medium rounded-full">
-                      {exp.period}
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <div className="flex items-center text-slate-600 dark:text-slate-400 mb-1 justify-start md:justify-start">
-                      <span className="font-medium text-teal-600 dark:text-teal-400">{exp.company}</span>
-                    </div>
-                    <div className="flex items-center text-slate-500 dark:text-slate-500 text-sm">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                  
-                  <ul className="list-disc list-inside mb-4 text-slate-600 dark:text-slate-300 space-y-2 text-left">
-                    {exp.description.map((item, i) => (
-                      <li key={i} className="text-sm">{item}</li>
-                    ))}
-                  </ul>
-                  
-                  <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                    {exp.technologies.map((tech, i) => (
-                      <span 
-                        key={i} 
-                        className="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-700"
-                      >
-                        {tech}
+    <section id="experience" className="py-24 bg-white dark:bg-[#05080e] transition-colors">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">
+            Professional Track & Leadership
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            4+ years of proven delivery across high-traffic digital retail, custom platforms, and enterprise web solutions.
+          </p>
+        </div>
+
+        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 sm:ml-6 pl-6 sm:pl-10 space-y-12">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative group"
+            >
+              {/* Timeline marker node */}
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-obsidian-950 border-2 border-teal-500 group-hover:scale-125 group-hover:bg-teal-500 transition-all duration-200" />
+
+              <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-obsidian-900/70 border border-slate-200/70 dark:border-slate-800/80 shadow-sm hover:border-teal-500/40 transition-colors">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
+                      {exp.role}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                      <span className="font-semibold text-teal-600 dark:text-teal-400">{exp.company}</span>
+                      <span className="text-slate-300 dark:text-slate-700">•</span>
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-slate-400" /> {exp.location}
                       </span>
-                    ))}
+                    </div>
+                  </div>
+
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-obsidian-850 border border-slate-200 dark:border-slate-800 text-xs font-mono font-medium text-slate-700 dark:text-slate-300">
+                    <Calendar className="w-3.5 h-3.5 text-teal-500" />
+                    <span>{exp.period}</span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                {/* Highlight callout */}
+                <div className="my-4 px-3.5 py-2 rounded-lg bg-teal-50/70 dark:bg-teal-950/30 border border-teal-200/60 dark:border-teal-800/40 text-xs sm:text-sm font-medium text-teal-800 dark:text-teal-300">
+                  ⚡ Impact: {exp.impactHighlight}
+                </div>
+
+                <ul className="space-y-2 mb-5">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200/50 dark:border-slate-800/60">
+                  {exp.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-0.5 rounded text-xs font-mono bg-white dark:bg-obsidian-850 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

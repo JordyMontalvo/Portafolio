@@ -11,12 +11,11 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Update title
-    document.title = 'Software Engineer Portfolio';
+    document.title = 'Jordy Montalvo — Senior Software Engineer & E-Commerce Architect';
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-800 dark:text-white">
+    <div className="min-h-screen bg-[#fafafa] dark:bg-[#05080e] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       <Header />
       <main>
         <Hero />
