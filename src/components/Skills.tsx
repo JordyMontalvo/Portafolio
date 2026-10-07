@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Layout, Server, Gauge, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SkillsOrbit from './SkillsOrbit';
 
 interface SkillItem {
   name: string;
@@ -83,45 +84,55 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <AnimatePresence>
-            {filteredSkills.map((skill) => (
-              <motion.div
-                layout
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                className="p-5 rounded-xl bg-slate-50 dark:bg-obsidian-900/70 border border-slate-200/70 dark:border-slate-800/80 hover:border-teal-500/40 dark:hover:border-teal-500/40 transition-colors flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">
-                      {skill.name}
-                    </h3>
-                    <span className="font-mono text-xs px-2 py-0.5 rounded bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 font-medium">
-                      {skill.experience}
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-normal mb-4">
-                    {skill.context}
-                  </p>
-                </div>
+        {/* Layout split for Orbit and Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 items-start mt-8">
+          
+          <div className="lg:col-span-5 sticky top-24 pt-8">
+            <SkillsOrbit />
+          </div>
 
-                <div className="pt-3 border-t border-slate-200/50 dark:border-slate-800/60 flex items-center justify-between text-xs font-mono text-slate-400 dark:text-slate-500">
-                  <span className="capitalize">{skill.category}</span>
-                  {skill.isCore && (
-                    <span className="inline-flex items-center gap-1 text-teal-600 dark:text-teal-400 font-sans font-medium">
-                      <Sparkles className="w-3 h-3" /> Core Mastery
-                    </span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+          <div className="lg:col-span-7">
+            {/* Skills Grid */}
+            <motion.div layout className="grid sm:grid-cols-2 gap-4">
+              <AnimatePresence mode="popLayout">
+                {filteredSkills.map((skill) => (
+                  <motion.div
+                    layout
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    className="p-5 rounded-xl bg-slate-50 dark:bg-obsidian-900/70 border border-slate-200/70 dark:border-slate-800/80 hover:border-teal-500/40 dark:hover:border-teal-500/40 transition-colors flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">
+                          {skill.name}
+                        </h3>
+                        <span className="font-mono text-xs px-2 py-0.5 rounded bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 font-medium">
+                          {skill.experience}
+                        </span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-normal mb-4">
+                        {skill.context}
+                      </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-slate-200/50 dark:border-slate-800/60 flex items-center justify-between text-xs font-mono text-slate-400 dark:text-slate-500">
+                      <span className="capitalize">{skill.category}</span>
+                      {skill.isCore && (
+                        <span className="inline-flex items-center gap-1 text-teal-600 dark:text-teal-400 font-sans font-medium">
+                          <Sparkles className="w-3 h-3" /> Core Mastery
+                        </span>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
