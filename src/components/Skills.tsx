@@ -93,16 +93,15 @@ const Skills: React.FC = () => {
 
           <div className="lg:col-span-7">
             {/* Skills Grid */}
-            <motion.div layout className="grid sm:grid-cols-2 gap-4">
-              <AnimatePresence mode="popLayout">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <AnimatePresence>
                 {filteredSkills.map((skill) => (
                   <motion.div
-                    layout
                     key={skill.name}
                     initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.96 }}
-                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     className="p-5 rounded-xl bg-slate-50 dark:bg-obsidian-900/70 border border-slate-200/70 dark:border-slate-800/80 hover:border-teal-500/40 dark:hover:border-teal-500/40 transition-colors flex flex-col justify-between"
                   >
                     <div>
@@ -130,7 +129,7 @@ const Skills: React.FC = () => {
                   </motion.div>
                 ))}
               </AnimatePresence>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

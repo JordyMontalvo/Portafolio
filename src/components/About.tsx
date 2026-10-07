@@ -1,17 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Briefcase, GraduationCap, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePos({ x, y });
+    cardRef.current.style.setProperty('--mouse-x', `${x}%`);
+    cardRef.current.style.setProperty('--mouse-y', `${y}%`);
   };
   const highlights = [
     {
@@ -57,13 +57,13 @@ const About: React.FC = () => {
               <div 
                 className="pointer-events-none absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay dark:mix-blend-color-dodge"
                 style={{
-                  background: `radial-gradient(800px circle at ${mousePos.x}% ${mousePos.y}%, rgba(20, 184, 166, 0.15), transparent 40%)`
+                  background: 'radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(20, 184, 166, 0.15), transparent 40%)'
                 }}
               />
               <div 
                 className="pointer-events-none absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-screen"
                 style={{
-                  background: `radial-gradient(400px circle at ${mousePos.x}% ${mousePos.y}%, rgba(255, 255, 255, 0.1), transparent 40%)`
+                  background: 'radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1), transparent 40%)'
                 }}
               />
 
