@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github, ArrowRight, X, Sparkles, Trophy } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
+import DataFlowDiagram from './DataFlowDiagram';
 
 interface Project {
   id: number;
@@ -367,9 +368,16 @@ const Projects: React.FC = () => {
                   <h4 className="text-xs uppercase font-mono tracking-wider text-slate-400 dark:text-slate-500 font-semibold mb-2">
                     Architecture & Impact
                   </h4>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
                     {selectedProject.longDescription || selectedProject.description}
                   </p>
+                  
+                  {/* Show diagram only for the flagship project (id: 1) or specific ones */}
+                  {selectedProject.id === 1 && (
+                    <div className="mt-6 mb-2">
+                      <DataFlowDiagram />
+                    </div>
+                  )}
                 </div>
                 
                 <div className="flex flex-wrap gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
