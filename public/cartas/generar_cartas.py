@@ -121,7 +121,7 @@ def build_carta_recomendacion_fuxion():
     doc = SimpleDocTemplate(pdf_name, pagesize=A4, rightMargin=68, leftMargin=68, topMargin=45, bottomMargin=45)
     story = []
 
-    story.append(make_header("fuxion-logo-navy.png", "FUXION BIOTECH S.A.C.", "Lima, 03 de octubre de 2026"))
+    story.append(make_header("fuxion-logo-navy.png", "FUXION BIOTECH S.A.C.", "Lima, 07 de octubre de 2026"))
     story.append(Spacer(1, 28))
 
     story.append(Paragraph("CARTA DE RECOMENDACIÓN Y REFERENCIA PROFESIONAL", style_title))
@@ -130,7 +130,7 @@ def build_carta_recomendacion_fuxion():
     story.append(Paragraph("A QUIEN CORRESPONDA:", style_body_bold))
     story.append(Spacer(1, 8))
 
-    p1 = """Por medio de la presente, me dirijo a ustedes para hacer constar que conozco y he supervisado el desempeño profesional de <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con D.N.I. N° <b>72481940</b>, quien prestó servicios profesionales en <b>FUXION BIOTECH S.A.C.</b> (RUC: 20513081236) desde enero de 2025 hasta agosto de 2026, desempeñando el rol de <b>Desarrollador Full Stack Senior</b> dentro del equipo de Arquitectura y TI."""
+    p1 = """Por medio de la presente, me dirijo a ustedes para hacer constar que conozco y he supervisado el desempeño profesional de <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con D.N.I. N° <b>90162185</b>, quien prestó servicios profesionales en <b>FUXION BIOTECH S.A.C.</b> (RUC: 20513081236) desde enero de 2025 hasta agosto de 2026, desempeñando el rol de <b>Desarrollador Full Stack Senior</b> dentro del equipo de Arquitectura y TI."""
     story.append(Paragraph(p1, style_body))
 
     p2 = """Durante el período de su contratación, demostró solvencia técnica, alto compromiso y capacidad de liderazgo en el análisis, relevamiento de requerimientos y diseño de arquitectura para microservicios empresariales desarrollados en Java 11+ y Spring Boot, desplegados sobre clústeres de Kubernetes en entornos de nube como GCP y AWS. Asimismo, implementó capas de mensajería asíncrona desacopladas con Apache Kafka y Google Pub/Sub para transacciones de alto volumen, desarrolló aplicaciones web modulares y reactivas en Angular con TypeScript y RxJS, y optimizó procedimientos almacenados en bases de datos Oracle PL/SQL y SQL Server, reduciendo la latencia de consultas en un 38%."""
@@ -158,7 +158,7 @@ def build_carta_recomendacion_fuxion():
 
     story.append(HRFlowable(width="38%", thickness=1, color=colors.HexColor('#1e293b'), spaceAfter=4, hAlign='LEFT'))
     story.append(Paragraph("Ing. Carlos Alberto Malpartida Zevallos", style_sign_name))
-    story.append(Paragraph("Lead Solutions Architect & Engineering Manager<br/><b>Fuxion Biotech S.A.C.</b><br/>Contacto: +51 987 234 109", style_sign_title))
+    story.append(Paragraph("Lead Solutions Architect & Engineering Manager<br/><b>Fuxion Biotech S.A.C.</b><br/>Contacto: +51 936 727 488", style_sign_title))
 
     story.append(Spacer(1, 24))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#cbd5e1'), spaceAfter=8))
@@ -166,7 +166,13 @@ def build_carta_recomendacion_fuxion():
     footer_text = """<b>FUXION BIOTECH S.A.C. | RUC: 20513081236</b><br/>
     Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú | www.fuxion.com<br/>
     Código de Validación: <b>REF-FX-2026-0842</b> | Documento oficial para fines de referencia profesional."""
-    story.append(make_footer("https://verificacion.fuxion.com/ref/2026-0842", footer_text))
+    
+    footer_table = Table([[Paragraph(footer_text, style_footer)]], colWidths=[465])
+    footer_table.setStyle(TableStyle([
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+    ]))
+    story.append(footer_table)
 
     doc.build(story)
     print(f"Built: {pdf_name}")
@@ -250,7 +256,7 @@ def build_certificado_trabajo_fuxion():
     story.append(Paragraph("<b>CERTIFICA:</b>", style_body_bold))
     story.append(Spacer(1, 8))
 
-    p2 = """Que, el señor <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con <b>D.N.I. N° 72481940</b>, laboró en nuestra institución bajo contrato de trabajo a plazo determinado sujeto a modalidad (al amparo del Texto Único Ordenado del Decreto Legislativo N° 728, Ley de Productividad y Competitividad Laboral), durante el período comprendido desde el <b>06 de enero de 2025</b> hasta el <b>14 de agosto de 2026</b>."""
+    p2 = """Que, el señor <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con <b>D.N.I. N° 90162185</b>, laboró en nuestra institución bajo contrato de trabajo a plazo determinado sujeto a modalidad (al amparo del Texto Único Ordenado del Decreto Legislativo N° 728, Ley de Productividad y Competitividad Laboral), durante el período comprendido desde el <b>06 de enero de 2025</b> hasta el <b>14 de agosto de 2026</b>."""
     story.append(Paragraph(p2, style_body))
 
     p3 = """Durante su permanencia en la empresa, desempeñó de manera destacada, a jornada completa y con alto rigor profesional el cargo de:"""
@@ -317,7 +323,7 @@ def build_constancia_servicios_fuxion():
     story.append(Paragraph("<b>HACE CONSTAR:</b>", style_body_bold))
     story.append(Spacer(1, 8))
 
-    p2 = """Que, el señor <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con <b>D.N.I. N° 72481940</b>, ha prestado servicios profesionales independientes para nuestra compañía bajo la modalidad de <b>Locación de Servicios</b> (al amparo del artículo 1764° y concordantes del Código Civil Peruano), en el período comprendido desde <b>enero de 2025</b> hasta <b>agosto de 2026</b>."""
+    p2 = """Que, el señor <b>JORDY JOSEPH MONTALVO ALFARO</b>, identificado con <b>D.N.I. N° 90162185</b>, ha prestado servicios profesionales independientes para nuestra compañía bajo la modalidad de <b>Locación de Servicios</b> (al amparo del artículo 1764° y concordantes del Código Civil Peruano), en el período comprendido desde <b>enero de 2025</b> hasta <b>agosto de 2026</b>."""
     story.append(Paragraph(p2, style_body))
 
     p3 = """Durante la prestación de sus servicios, el señor Montalvo estuvo a cargo de la consultoría técnica y desarrollo en calidad de:"""
