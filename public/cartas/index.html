@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas de Recomendación y Referencia Profesional</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --bg-color: #f1f5f9;
+            --paper-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-fuxion: #0a2540;
+            --accent-sifrah: #fe6d01;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Controls Section */
+        .controls {
+            width: 100%;
+            max-width: 21cm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .controls h1 {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            border-color: #cbd5e1;
+            background: white;
+            color: #475569;
+        }
+
+        .btn-outline:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        /* A4 Paper Styling */
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            background: var(--paper-bg);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            position: relative;
+            margin: 0 auto;
+            padding: 2.5cm;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Edit mode styling */
+        [contenteditable="true"] {
+            outline: none;
+            transition: background-color 0.2s;
+            border-radius: 2px;
+        }
+        
+        [contenteditable="true"]:hover {
+            background-color: #fef08a; /* light yellow */
+            cursor: text;
+        }
+        
+        [contenteditable="true"]:focus {
+            background-color: #fef08a;
+            border-bottom: 1px dashed #ca8a04;
+        }
+
+        /* Document Typography */
+        .doc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .doc-logo {
+            height: 48px;
+            object-fit: contain;
+        }
+        
+        .doc-logo.fuxion {
+            height: 52px;
+        }
+        
+        .doc-logo.sifrah {
+            height: 44px;
+        }
+
+        .doc-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .doc-title {
+            text-align: center;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: 0.025em;
+        }
+
+        .doc-salutation {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .doc-body p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+
+        .doc-signature {
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .doc-signature-img {
+            height: 90px;
+            margin-bottom: -30px;
+            margin-top: -10px;
+            object-fit: contain;
+            object-position: left bottom;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+
+        .sign-line {
+            width: 200px;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .sign-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sign-title {
+            color: #475569;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .doc-footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .qr-placeholder {
+            width: 70px;
+            height: 70px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        .qr-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: center;
+            flex: 1;
+        }
+
+        /* Print Media Queries */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .controls {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 2.5cm;
+                page-break-after: always;
+            }
+            
+            [contenteditable="true"]:hover,
+            [contenteditable="true"]:focus {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Controls -->
+    <div class="controls">
+        <h1>Cartas Oficiales (PDF/HTML)</h1>
+        <div class="actions">
+            <button onclick="window.print()" class="btn btn-primary">🖨️ Imprimir / Guardar como PDF</button>
+            <a href="Carta_Recomendacion_Fuxion_Jordy_Montalvo.pdf" download class="btn btn-outline">⬇️ PDF Fuxion</a>
+            <a href="Carta_Recomendacion_Sifrah_Jordy_Montalvo.pdf" download class="btn btn-outline">⬇️ PDF Sifrah</a>
+        </div>
+    </div>
+
+    <!-- Carta 1: Fuxion -->
+    <div class="page">
+        <div class="doc-header">
+            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo fuxion">
+            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+        </div>
+
+        <div class="doc-title">CARTA DE RECOMENDACIÓN Y REFERENCIA PROFESIONAL</div>
+
+        <div class="doc-salutation">A QUIEN CORRESPONDA:</div>
+
+        <div class="doc-body">
+            <p>Por medio de la presente, me dirijo a ustedes para hacer constar que conozco y he supervisado el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, quien prestó sus servicios profesionales en <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong> (RUC: 20513081236) desde <span contenteditable="true">enero de 2025</span> hasta <span contenteditable="true">agosto de 2026</span>, bajo la modalidad de locación de servicios independientes, desempeñando el rol de <strong contenteditable="true">Desarrollador Full Stack Senior</strong>.</p>
+            
+            <p>Durante el período de su contratación, demostró solvencia técnica, alto compromiso y capacidad de liderazgo en el análisis, relevamiento de requerimientos y diseño de arquitectura para microservicios empresariales desarrollados en Java 11+ y Spring Boot, desplegados sobre clústeres de Kubernetes en entornos de nube como GCP y AWS. Asimismo, implementó capas de mensajería asíncrona desacopladas con Apache Kafka y Google Pub/Sub para transacciones de alto volumen, desarrolló aplicaciones web modulares y reactivas en Angular con TypeScript y RxJS, y optimizó procedimientos almacenados en bases de datos Oracle PL/SQL y SQL Server, reduciendo la latencia de consultas en un 38%.</p>
+            
+            <p>A nivel profesional y personal, demostró puntualidad en las entregas bajo el marco de trabajo Scrum, excelente trabajo en equipo, capacidad analítica para resolver problemas complejos y una conducta ética intachable.</p>
+            
+            <p>Por las razones expuestas, no dudo en recomendarlo ampliamente para cualquier posición o proyecto de ingeniería de software que asuma en su organización.</p>
+            
+            <p>Quedo a su disposición para cualquier consulta o información adicional que requieran.</p>
+        </div>
+
+        <div class="doc-signature">
+            <p style="margin-bottom: 2rem;">Atentamente,</p>
+            <div class="sign-line"></div>
+            <div class="sign-name" contenteditable="true">[Nombre del Referente / Jefe Inmediato]</div>
+            <div class="sign-title">
+                <span contenteditable="true">Líder Técnico / Gerencia de TI</span><br>
+                <strong>Fuxion Biotech S.A.C.</strong><br>
+                Teléfono: <span contenteditable="true">[Número de contacto]</span>
+            </div>
+        </div>
+
+        <div class="doc-footer">
+            <div class="qr-placeholder">
+                <!-- Using a generic QR code placeholder image or text if img fails -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.fuxion.com/ref/2026-0842" alt="QR Verificación" onerror="this.style.display='none'; this.parentNode.innerHTML='QR<br>Code';">
+            </div>
+            <div class="footer-text" contenteditable="true">
+                <strong>FUXION BIOTECH S.A.C. | RUC: 20513081236</strong><br>
+                Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú<br>
+                Documento emitido para fines de referencia laboral.
+            </div>
+        </div>
+    </div>
+
+    <!-- Carta 2: Sifrah -->
+    <div class="page">
+        <div class="doc-header">
+            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo sifrah">
+            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+        </div>
+
+        <div class="doc-title">CARTA DE RECOMENDACIÓN Y REFERENCIA PROFESIONAL</div>
+
+        <div class="doc-salutation">A QUIEN CORRESPONDA:</div>
+
+        <div class="doc-body">
+            <p>Por medio de la presente, hago constar que conozco el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, quien prestó servicios profesionales para <strong contenteditable="true">SIFRAH</strong> (VII NEXT S.A.C., RUC: 20603352867) en el período comprendido entre <span contenteditable="true">enero de 2023</span> y <span contenteditable="true">enero de 2025</span>, bajo la modalidad de locación de servicios independientes, desempeñando el rol de <strong contenteditable="true">Analista Programador Full Stack</strong>.</p>
+            
+            <p>A lo largo de su servicio, estuvo a cargo de la construcción y soporte de servicios backend transaccionales en Java (Spring Boot) y .NET (C#), integrando pasarelas de pago, facturación electrónica y servicios On-Premise. Asimismo, implementó colas de mensajería asíncrona con RabbitMQ para la orquestación entre sistemas satélites y sincronización con almacenes NoSQL (MongoDB), y desarrolló interfaces web dinámicas con Angular, TypeScript, HTML5 y CSS3, optimizando los tiempos de carga y métricas de rendimiento en un 40%.</p>
+            
+            <p>Durante todo su tiempo con nosotros, demostró gran iniciativa, responsabilidad, resolución técnica de incidencias y un claro enfoque en la calidad de software y mejores prácticas colaborativas bajo Git.</p>
+            
+            <p>Por lo expuesto, extiendo mi recomendación profesional y personal hacia su persona, con la certeza de que aportará alto valor técnico y humano en los nuevos retos laborales que emprenda.</p>
+            
+            <p>Quedo a su disposición para atender cualquier requerimiento de validación complementaria.</p>
+        </div>
+
+        <div class="doc-signature">
+            <p style="margin-bottom: 2rem;">Atentamente,</p>
+            <img src="firma_carlos.png" alt="Firma" class="doc-signature-img" style="height:40px; margin-bottom:-10px;">
+            <div class="sign-line"></div>
+            <div class="sign-name" contenteditable="true">Pedro Valentino Flores Tantalean</div>
+            <div class="sign-title">
+                <span contenteditable="true">Tech Lead / Jefatura de Sistemas</span><br>
+                <strong>VII NEXT S.A.C.</strong><br>
+                Teléfono: <span contenteditable="true">934 466 762</span>
+            </div>
+        </div>
+
+        <div class="doc-footer">
+            <div class="qr-placeholder">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.sifrah.com/ref/2026-0118" alt="QR Verificación" onerror="this.style.display='none'; this.parentNode.innerHTML='QR<br>Code';">
+            </div>
+            <div class="footer-text" contenteditable="true">
+                <strong>VII NEXT S.A.C. | RUC: 20603352867</strong><br>
+                MZA. P1 LOTE 3 A.H. LA RINCONADA DE PAMPLIACI, San Juan de Miraflores, Lima, Perú<br>
+                Documento emitido para fines de referencia laboral.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

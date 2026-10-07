@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github, ArrowRight, X, Sparkles, Trophy } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 interface Project {
   id: number;
@@ -164,7 +165,8 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mb-14 rounded-2xl bg-white dark:bg-obsidian-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-card dark:shadow-card-dark group"
           >
-            <div className="grid lg:grid-cols-12 items-stretch">
+            <Tilt tiltMaxAngleX={2} tiltMaxAngleY={2} scale={1.01} transitionSpeed={2000}>
+              <div className="grid lg:grid-cols-12 items-stretch">
               <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-auto overflow-hidden bg-slate-100 dark:bg-obsidian-850">
                 <img
                   src={flagship.image}
@@ -220,6 +222,7 @@ const Projects: React.FC = () => {
                 </div>
               </div>
             </div>
+            </Tilt>
           </motion.div>
         )}
 
@@ -254,7 +257,8 @@ const Projects: React.FC = () => {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer rounded-2xl bg-white dark:bg-obsidian-900 border border-slate-200/80 dark:border-slate-800 hover:border-teal-500/50 dark:hover:border-teal-500/50 shadow-sm hover:shadow-card transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
-                <div>
+                <Tilt tiltMaxAngleX={4} tiltMaxAngleY={4} scale={1.01} transitionSpeed={2000} className="flex flex-col h-full justify-between">
+                  <div>
                   <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-obsidian-850">
                     <img
                       src={project.image}
@@ -295,6 +299,7 @@ const Projects: React.FC = () => {
                   </span>
                   {project.demo && <ExternalLink className="w-3.5 h-3.5 text-slate-400" />}
                 </div>
+                </Tilt>
               </motion.div>
             ))}
           </AnimatePresence>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Github, Linkedin, Mail, ExternalLink, Sparkles, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Hero3DBackground from './Hero3DBackground';
 
 const Hero: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -26,6 +27,9 @@ const Hero: React.FC = () => {
       {/* Subtle atmospheric texture */}
       <div className="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:24px_24px]" />
       
+      {/* 3D Background Elements */}
+      <Hero3DBackground />
+
       {/* Soft directional accent lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-teal-500/10 dark:bg-teal-500/15 rounded-full blur-[120px] pointer-events-none" />
 
