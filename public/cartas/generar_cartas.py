@@ -347,16 +347,16 @@ def build_constancia_servicios_fuxion():
     story.append(Paragraph(p5, style_body))
     story.append(Spacer(1, 18))
 
-    # Firma TI
-    postfirma_path = "postfirma_fuxion_ti.png"
+    # Firma RRHH
+    postfirma_path = "postfirma_fuxion_rrhh.png"
     if os.path.exists(postfirma_path):
         story.append(Image(postfirma_path, width=175, height=70, hAlign='LEFT'))
     else:
         story.append(Spacer(1, 35))
 
     story.append(HRFlowable(width="38%", thickness=1, color=colors.HexColor('#1e293b'), spaceAfter=4, hAlign='LEFT'))
-    story.append(Paragraph("Ing. Carlos Alberto Malpartida Zevallos", style_sign_name))
-    story.append(Paragraph("Gerencia de Tecnología y Operaciones<br/><b>Fuxion Biotech S.A.C.</b>", style_sign_title))
+    story.append(Paragraph("Lic. Mariana Morales Echevarría", style_sign_name))
+    story.append(Paragraph("Gerencia de Gestión del Talento Humano<br/><b>Fuxion Biotech S.A.C.</b>", style_sign_title))
 
     story.append(Spacer(1, 24))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#cbd5e1'), spaceAfter=8))
@@ -481,16 +481,16 @@ def build_constancia_servicios_sifrah():
     story.append(Paragraph(p5, style_body))
     story.append(Spacer(1, 18))
 
-    # Firma TI
-    postfirma_path = "postfirma_sifrah_ti.png"
+    # Firma RRHH
+    postfirma_path = "postfirma_sifrah_rrhh.png"
     if os.path.exists(postfirma_path):
         story.append(Image(postfirma_path, width=175, height=70, hAlign='LEFT'))
     else:
         story.append(Spacer(1, 35))
 
     story.append(HRFlowable(width="38%", thickness=1, color=colors.HexColor('#1e293b'), spaceAfter=4, hAlign='LEFT'))
-    story.append(Paragraph("Pedro Valentino Flores Tantalean", style_sign_name))
-    story.append(Paragraph("Jefatura de Sistemas e Infraestructura<br/><b>VII NEXT S.A.C.</b>", style_sign_title))
+    story.append(Paragraph("Lic. Claudia Lucía Benavides Vargas", style_sign_name))
+    story.append(Paragraph("Jefatura de Recursos Humanos y Administración<br/><b>VII NEXT S.A.C.</b>", style_sign_title))
 
     story.append(Spacer(1, 24))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#cbd5e1'), spaceAfter=8))
