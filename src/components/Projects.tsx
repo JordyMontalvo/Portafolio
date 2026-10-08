@@ -18,7 +18,7 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Lock body scroll & listen for Escape key when modal is open
@@ -131,16 +131,12 @@ const Projects: React.FC = () => {
     }
   ];
 
-  const filterTabs = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'ecommerce', label: 'E-Commerce & Shopify' },
-    { id: 'apps', label: 'Web Applications' },
-    { id: 'fullstack', label: 'Full-Stack & AI' },
-  ];
+  // Extract unique tags and sort them
+  const allTags = ['All', ...Array.from(new Set(projects.flatMap(p => p.tags))).sort()];
 
-  const filteredProjects = activeFilter === 'all'
+  const filteredProjects = activeFilter === 'All'
     ? projects
-    : projects.filter(p => p.category === activeFilter);
+    : projects.filter(p => p.tags.includes(activeFilter));
 
   const flagship = projects[0];
 
@@ -157,7 +153,7 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Flagship Spotlight Hero Card */}
-        {activeFilter === 'all' && (
+        {activeFilter === 'All' && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -170,6 +166,7 @@ const Projects: React.FC = () => {
                 <img
                   src={flagship.image}
                   alt={flagship.title}
+                  fetchPriority="high"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 dark:bg-white/90 text-white dark:text-slate-900 text-xs font-semibold backdrop-blur-md">
@@ -224,19 +221,19 @@ const Projects: React.FC = () => {
           </motion.div>
         )}
 
-        {/* Category Filters */}
+        {/* Tag Filters */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {filterTabs.map((tab) => (
+          {allTags.map((tag) => (
             <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-colors ${
-                activeFilter === tab.id
-                  ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm'
-                  : 'bg-white dark:bg-obsidian-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800'
+              key={tag}
+              onClick={() => setActiveFilter(tag)}
+              className={`px-3 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${
+                activeFilter === tag
+                  ? 'bg-teal-500/10 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/50 shadow-sm'
+                  : 'bg-white dark:bg-obsidian-900 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800'
               }`}
             >
-              {tab.label}
+              {tag}
             </button>
           ))}
         </div>
@@ -260,6 +257,8 @@ const Projects: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     {project.metrics && (

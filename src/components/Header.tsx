@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Terminal, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,12 +23,12 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('header.about'), href: '#about' },
+    { name: t('header.services'), href: '#services' },
+    { name: t('header.skills'), href: '#skills' },
+    { name: t('header.projects'), href: '#projects' },
+    { name: t('header.experience'), href: '#experience' },
+    { name: t('header.contact'), href: '#contact' },
   ];
 
   return (
@@ -84,12 +90,24 @@ const Header: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
               Available for hire
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="p-1.5 rounded-md text-xs font-bold uppercase text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-8 text-center"
+            >
+              {(i18n.language || 'en').substring(0, 2)}
+            </button>
             <ThemeToggle />
           </div>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1.5">
+          <button
+            onClick={toggleLanguage}
+            className="p-1.5 rounded-md text-xs font-bold uppercase text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-8 text-center"
+          >
+            {(i18n.language || 'en').substring(0, 2)}
+          </button>
           <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, MessageSquare, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, MessageSquare, Linkedin, Github, Copy, Check } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,13 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('jordyjosephmontalvo@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -60,20 +67,29 @@ const Contact: React.FC = () => {
               </h3>
 
               <div className="space-y-4">
-                <a
-                  href="mailto:jordyjosephmontalvo@gmail.com"
-                  className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-white dark:hover:bg-obsidian-850 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-colors group"
-                >
-                  <div className="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 shrink-0">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono uppercase text-slate-400 dark:text-slate-500">Email</div>
-                    <div className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                      jordyjosephmontalvo@gmail.com
+                <div className="flex items-center justify-between p-3 rounded-xl hover:bg-white dark:hover:bg-obsidian-850 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-colors group">
+                  <a
+                    href="mailto:jordyjosephmontalvo@gmail.com"
+                    className="flex items-start gap-3.5 flex-1"
+                  >
+                    <div className="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 shrink-0">
+                      <Mail className="w-4 h-4" />
                     </div>
-                  </div>
-                </a>
+                    <div>
+                      <div className="text-xs font-mono uppercase text-slate-400 dark:text-slate-500">Email</div>
+                      <div className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                        jordyjosephmontalvo@gmail.com
+                      </div>
+                    </div>
+                  </a>
+                  <button 
+                    onClick={handleCopy}
+                    aria-label="Copy email"
+                    className="p-2 text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                  >
+                    {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                  </button>
+                </div>
 
                 <a
                   href="https://wa.me/51978509234"
