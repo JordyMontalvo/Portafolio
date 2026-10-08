@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 /impeccable/
 .venv
+__pycache__/
+*.pyc

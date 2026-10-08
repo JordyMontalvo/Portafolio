@@ -27,7 +27,7 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.55;
             padding: 2rem 1rem;
             display: flex;
             flex-direction: column;
@@ -158,19 +158,21 @@
             font-weight: 600;
         }
 
-        /* A4 Paper Styling */
+        /* Base A4 Paper Styling (Strict 1-Page Layout) */
         .page {
             width: 21cm;
-            min-height: 29.7cm;
+            height: 29.7cm;
+            max-height: 29.7cm;
             background: var(--paper-bg);
             box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
             position: relative;
             margin: 0 auto;
-            padding: 2.2cm 2.4cm 2cm 2.4cm;
+            padding: 1.8cm 2.2cm 1.6cm 2.2cm;
             display: flex;
             flex-direction: column;
             border-radius: 4px;
             overflow: hidden;
+            box-sizing: border-box;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
@@ -182,7 +184,7 @@
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             border: 1px solid transparent;
         }
 
@@ -215,154 +217,356 @@
             border-bottom: 1px dashed #ca8a04;
         }
 
-        /* Document Typography */
-        .doc-header {
+        /* =================================================================== */
+        /* BRAND IDENTITY 1: FUXION BIOTECH (Modern Tech Navy) */
+        /* =================================================================== */
+        .page-fuxion {
+            border-top: 5px solid #0a2540;
+        }
+
+        .page-fuxion .doc-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.8rem;
+            border-bottom: 2px solid #0a2540;
+            padding-bottom: 0.65rem;
+            margin-bottom: 1.15rem;
         }
 
-        .doc-logo {
-            height: 48px;
+        .page-fuxion .doc-logo {
+            height: 42px;
             object-fit: contain;
         }
-        
-        .doc-logo.fuxion {
-            height: 48px;
-        }
-        
-        .doc-logo.sifrah {
-            height: 38px;
-        }
 
-        .doc-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        .page-fuxion .doc-header-meta {
             text-align: right;
-            font-weight: 500;
+            font-size: 0.785rem;
+            line-height: 1.35;
+            color: #64748b;
         }
 
-        .doc-title {
+        .page-fuxion .doc-header-meta strong {
+            color: #0a2540;
+            font-size: 0.85rem;
+        }
+
+        .page-fuxion .doc-title {
             text-align: center;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 1.6rem;
-            letter-spacing: 0.025em;
+            color: #0a2540;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.02em;
             text-transform: uppercase;
         }
 
-        .doc-salutation {
+        .page-fuxion .doc-salutation {
             font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-            color: #0f172a;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: #0a2540;
         }
 
-        .doc-body p {
-            margin-bottom: 1.1rem;
+        .page-fuxion .doc-body p {
+            margin-bottom: 0.75rem;
             text-align: justify;
-            font-size: 0.925rem;
-            line-height: 1.62;
-            color: #334155;
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: #1e293b;
         }
 
-        .doc-cargo-highlight {
+        .page-fuxion .doc-cargo-highlight {
             background: #f8fafc;
             border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 0.75rem 1rem;
-            margin: 1rem 0 1.25rem 0;
+            border-left: 4px solid #0a2540;
+            border-radius: 4px;
+            padding: 0.55rem 0.9rem;
+            margin: 0.75rem 0 0.85rem 0;
             text-align: center;
         }
 
-        .doc-cargo-highlight strong {
+        .page-fuxion .doc-cargo-highlight strong {
             display: block;
-            font-size: 0.95rem;
-            color: #0f172a;
+            font-size: 0.925rem;
+            color: #0a2540;
             letter-spacing: 0.02em;
         }
 
-        .doc-cargo-highlight span {
-            font-size: 0.8rem;
+        .page-fuxion .doc-cargo-highlight span {
+            font-size: 0.785rem;
             color: #64748b;
-            font-style: italic;
         }
 
+        .page-fuxion .sign-line {
+            width: 200px;
+            border-bottom: 1.5px solid #0a2540;
+            margin-bottom: 0.35rem;
+        }
+
+        .page-fuxion .sign-name {
+            font-weight: 700;
+            font-size: 0.885rem;
+            color: #0a2540;
+            margin-bottom: 0.1rem;
+        }
+
+        .page-fuxion .sign-title {
+            color: #475569;
+            font-size: 0.785rem;
+            line-height: 1.35;
+        }
+
+        .page-fuxion .doc-footer {
+            margin-top: auto;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 0.75rem;
+            text-align: center;
+        }
+
+        .page-fuxion .footer-text {
+            font-size: 0.685rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* =================================================================== */
+        /* BRAND IDENTITY 2: VII NEXT - SIFRAH (Formal Legal / Warm Amber) */
+        /* =================================================================== */
+        .page-sifrah {
+            border-top: 5px solid #b45309;
+        }
+
+        .page-sifrah .doc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #b45309;
+            padding-bottom: 0.65rem;
+            margin-bottom: 1.15rem;
+        }
+
+        .page-sifrah .doc-logo {
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .page-sifrah .doc-header-meta {
+            text-align: right;
+            font-size: 0.785rem;
+            line-height: 1.35;
+            color: #78716c;
+        }
+
+        .page-sifrah .doc-header-meta strong {
+            color: #1c1917;
+            font-size: 0.85rem;
+        }
+
+        .page-sifrah .doc-title {
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1c1917;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .page-sifrah .doc-salutation {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: #1c1917;
+        }
+
+        .page-sifrah .doc-body p {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: #292524;
+        }
+
+        .page-sifrah .doc-cargo-highlight {
+            background: #fffdf5;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #b45309;
+            border-radius: 4px;
+            padding: 0.55rem 0.9rem;
+            margin: 0.75rem 0 0.85rem 0;
+            text-align: center;
+        }
+
+        .page-sifrah .doc-cargo-highlight strong {
+            display: block;
+            font-size: 0.925rem;
+            color: #1c1917;
+            letter-spacing: 0.02em;
+        }
+
+        .page-sifrah .doc-cargo-highlight span {
+            font-size: 0.785rem;
+            color: #78350f;
+        }
+
+        .page-sifrah .sign-line {
+            width: 200px;
+            border-bottom: 1.5px solid #1c1917;
+            margin-bottom: 0.35rem;
+        }
+
+        .page-sifrah .sign-name {
+            font-weight: 700;
+            font-size: 0.885rem;
+            color: #1c1917;
+            margin-bottom: 0.1rem;
+        }
+
+        .page-sifrah .sign-title {
+            color: #57534e;
+            font-size: 0.785rem;
+            line-height: 1.35;
+        }
+
+        .page-sifrah .doc-footer {
+            margin-top: auto;
+            border-top: 1px solid #e7e5e4;
+            padding-top: 0.75rem;
+            text-align: center;
+        }
+
+        .page-sifrah .footer-text {
+            font-size: 0.685rem;
+            color: #78716c;
+            line-height: 1.4;
+        }
+
+        /* Differentiated Matrix & Placa Styles */
+        .fuxion-meta-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 4px;
+            padding: 0.4rem 0.65rem;
+            text-align: right;
+            font-size: 0.745rem;
+            line-height: 1.35;
+            color: #475569;
+        }
+
+        .fuxion-meta-box strong {
+            color: #0a2540;
+            font-size: 0.8rem;
+        }
+
+        .fuxion-matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.65rem 0 0.85rem 0;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #0a2540;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 0.815rem;
+        }
+
+        .fuxion-matrix-table td {
+            padding: 0.45rem 0.7rem;
+            border-bottom: 1px solid #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .fuxion-matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fuxion-matrix-table td.col-label {
+            background: #f1f5f9;
+            color: #0a2540;
+            font-weight: 700;
+            width: 32%;
+            white-space: nowrap;
+        }
+
+        .fuxion-matrix-table td.col-val {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .sifrah-header-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #b45309;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .sifrah-header-centered::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #d97706;
+        }
+
+        .sifrah-spaced-title {
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1c1917;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin: 0.75rem 0 0.85rem 0;
+        }
+
+        .sifrah-cert-placa {
+            background: #fffdf5;
+            border: 1px solid #d97706;
+            border-top: 3px solid #b45309;
+            border-bottom: 3px solid #b45309;
+            border-radius: 4px;
+            padding: 0.65rem 1rem;
+            margin: 0.75rem 0 0.85rem 0;
+            text-align: center;
+        }
+
+        .sifrah-cert-placa strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #1c1917;
+            letter-spacing: 0.02em;
+        }
+
+        .sifrah-cert-placa span {
+            font-size: 0.8rem;
+            color: #78350f;
+            display: block;
+            margin-top: 0.15rem;
+        }
+
+        /* Signatures Common */
         .doc-signature {
-            margin-top: 1.5rem;
+            margin-top: 0.9rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
         .doc-signature-img {
-            height: 80px;
-            margin-bottom: -15px;
-            margin-top: -10px;
+            height: 60px;
+            margin-bottom: -10px;
+            margin-top: -8px;
             object-fit: contain;
             object-position: left bottom;
             display: block;
             mix-blend-mode: multiply;
         }
 
-        .sign-line {
-            width: 220px;
-            border-bottom: 1.5px solid #1e293b;
-            margin-bottom: 0.4rem;
-        }
-
-        .sign-name {
-            font-weight: 700;
-            font-size: 0.925rem;
-            color: #0f172a;
-            margin-bottom: 0.15rem;
-        }
-
-        .sign-title {
-            color: #475569;
-            font-size: 0.825rem;
-            line-height: 1.35;
-        }
-
-        .doc-footer {
-            margin-top: auto;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .qr-placeholder {
-            width: 60px;
-            height: 60px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .qr-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .footer-text {
-            font-size: 0.725rem;
-            color: var(--text-muted);
-            text-align: center;
-            flex: 1;
-            line-height: 1.4;
-        }
-
-        /* Print Media Queries */
+        /* Print Media Queries - Strict 1 Page */
         @media print {
             @page {
                 size: A4 portrait;
@@ -382,9 +586,10 @@
             .page {
                 box-shadow: none !important;
                 margin: 0 !important;
-                padding: 2.2cm 2.4cm 2cm 2.4cm !important;
+                padding: 1.6cm 2cm 1.4cm 2cm !important;
                 page-break-after: always !important;
-                display: flex !important;
+                height: 29.7cm !important;
+                max-height: 29.7cm !important;
                 border-radius: 0 !important;
             }
             
@@ -403,8 +608,8 @@
         <div class="controls">
             <div class="controls-top">
                 <h1>
-                    <span>📂 Documentos Laborales Oficiales</span>
-                    <span class="badge-total">6 Documentos</span>
+                    <span>📂 Documentos Laborales y Referencias Oficiales</span>
+                    <span class="badge-total">6 Documentos (1 Pág. c/u)</span>
                 </h1>
                 <div class="actions">
                     <a href="/" class="btn btn-outline">⬅️ Portafolio</a>
@@ -428,12 +633,16 @@
     <!-- =================================================================== -->
     <!-- 1. CARTA DE RECOMENDACIÓN — FUXION BIOTECH S.A.C. -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="recomendacion fuxion">
+    <div class="page page-fuxion doc-item" data-category="recomendacion fuxion">
         <div class="doc-badge-pill badge-fuxion">Fuxion Biotech S.A.C. • Carta de Recomendación</div>
         
         <div class="doc-header">
-            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo fuxion">
-            <div class="doc-date" contenteditable="true">Lima, 07 de octubre de 2026</div>
+            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo">
+            <div class="doc-header-meta">
+                <strong>FUXION BIOTECH S.A.C.</strong><br>
+                R.U.C. N° 20513081236 &bull; Sede Central<br>
+                <span contenteditable="true">Lima, 07 de octubre de 2026</span>
+            </div>
         </div>
 
         <div class="doc-title" contenteditable="true">CARTA DE RECOMENDACIÓN Y REFERENCIA PROFESIONAL</div>
@@ -441,7 +650,7 @@
         <div class="doc-salutation" contenteditable="true">A QUIEN CORRESPONDA:</div>
 
         <div class="doc-body">
-            <p>Por medio de la presente, me dirijo a ustedes para hacer constar que conozco y he supervisado el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con D.N.I. N° <span contenteditable="true">90162185</span>, quien prestó sus servicios profesionales en <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong> (RUC: 20513081236) desde <span contenteditable="true">enero de 2025</span> hasta <span contenteditable="true">agosto de 2026</span>, desempeñando el rol de <strong contenteditable="true">Desarrollador Full Stack Senior</strong> dentro del equipo de Arquitectura y TI.</p>
+            <p>Por medio de la presente, me dirijo a ustedes para hacer constar que conozco y he supervisado el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con D.N.I. N° <span contenteditable="true">90162185</span>, quien prestó servicios profesionales en <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong> (R.U.C. N° 20513081236) desde <span contenteditable="true">enero de 2025</span> hasta <span contenteditable="true">agosto de 2026</span>, desempeñando el rol de <strong contenteditable="true">Desarrollador Full Stack Senior</strong> dentro del equipo de Arquitectura y Tecnologías de la Información (TI).</p>
             
             <p>Durante el período de su contratación, demostró solvencia técnica, alto compromiso y capacidad de liderazgo en el análisis, relevamiento de requerimientos y diseño de arquitectura para microservicios empresariales desarrollados en Java 11+ y Spring Boot, desplegados sobre clústeres de Kubernetes en entornos de nube como GCP y AWS. Asimismo, implementó capas de mensajería asíncrona desacopladas con Apache Kafka y Google Pub/Sub para transacciones de alto volumen, desarrolló aplicaciones web modulares y reactivas en Angular con TypeScript y RxJS, y optimizó procedimientos almacenados en bases de datos Oracle PL/SQL y SQL Server, reduciendo la latencia de consultas en un 38%.</p>
             
@@ -449,11 +658,11 @@
             
             <p>Por las razones expuestas, no dudo en recomendarlo ampliamente para cualquier posición o proyecto de ingeniería de software que asuma en su organización.</p>
             
-            <p>Quedo a su disposición para cualquier consulta o información adicional que requieran.</p>
+            <p>Quedo a su entera disposición para cualquier consulta o información adicional que requieran.</p>
         </div>
 
         <div class="doc-signature">
-            <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">Atentamente,</p>
+            <p style="margin-bottom: 0.35rem; font-size: 0.85rem;">Atentamente,</p>
             <img src="postfirma_fuxion_ti.png" alt="Firma y Sello Oficial" class="doc-signature-img">
             <div class="sign-line"></div>
             <div class="sign-name" contenteditable="true">Ing. Carlos Alberto Malpartida Zevallos</div>
@@ -464,11 +673,11 @@
             </div>
         </div>
 
-        <div class="doc-footer" style="justify-content: center;">
+        <div class="doc-footer">
             <div class="footer-text" contenteditable="true">
-                <strong>FUXION BIOTECH S.A.C. | RUC: 20513081236</strong><br>
+                <strong>FUXION BIOTECH S.A.C. &bull; R.U.C. 20513081236</strong><br>
                 Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú | www.fuxion.com<br>
-                Código de Validación: <strong>REF-FX-2026-0842</strong> | Documento emitido para fines de referencia profesional.
+                Registro y Control Documentario N° <strong>REF-FX-2026-0842</strong> | Documento oficial expedido para fines laborales y profesionales.
             </div>
         </div>
     </div>
@@ -476,12 +685,16 @@
     <!-- =================================================================== -->
     <!-- 2. CARTA DE RECOMENDACIÓN — SIFRAH (VII NEXT S.A.C.) -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="recomendacion sifrah">
+    <div class="page page-sifrah doc-item" data-category="recomendacion sifrah">
         <div class="doc-badge-pill badge-sifrah">VII NEXT S.A.C. (Sifrah) • Carta de Recomendación</div>
 
         <div class="doc-header">
-            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo sifrah">
-            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo">
+            <div class="doc-header-meta">
+                <strong>VII NEXT S.A.C. &bull; SIFRAH</strong><br>
+                R.U.C. N° 20603352867 &bull; Retail & Comercio<br>
+                <span contenteditable="true">Lima, 03 de octubre de 2026</span>
+            </div>
         </div>
 
         <div class="doc-title" contenteditable="true">CARTA DE RECOMENDACIÓN Y REFERENCIA PROFESIONAL</div>
@@ -489,7 +702,7 @@
         <div class="doc-salutation" contenteditable="true">A QUIEN CORRESPONDA:</div>
 
         <div class="doc-body">
-            <p>Por medio de la presente, hago constar que conozco el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con D.N.I. N° <span contenteditable="true">72481940</span>, quien prestó servicios profesionales para <strong contenteditable="true">SIFRAH</strong> (VII NEXT S.A.C., RUC: 20603352867) en el período comprendido entre <span contenteditable="true">enero de 2023</span> y <span contenteditable="true">enero de 2025</span>, desempeñando el rol de <strong contenteditable="true">Analista Programador Full Stack</strong>.</p>
+            <p>Por medio de la presente, hago constar que conozco el desempeño profesional de <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con D.N.I. N° <span contenteditable="true">72481940</span>, quien prestó servicios profesionales para <strong contenteditable="true">SIFRAH</strong> (VII NEXT S.A.C., R.U.C. N° 20603352867) en el período comprendido entre <span contenteditable="true">enero de 2023</span> y <span contenteditable="true">enero de 2025</span>, desempeñando el rol de <strong contenteditable="true">Analista Programador Full Stack</strong> en el área de Tecnología de la Información y Desarrollo de Sistemas.</p>
             
             <p>A lo largo de su servicio, estuvo a cargo de la construcción y soporte de servicios backend transaccionales en Java (Spring Boot) y .NET (C#), integrando pasarelas de pago, facturación electrónica y servicios On-Premise. Asimismo, implementó colas de mensajería asíncrona con RabbitMQ para la orquestación entre sistemas satélites y sincronización con almacenes NoSQL (MongoDB), y desarrolló interfaces web dinámicas con Angular, TypeScript, HTML5 y CSS3, optimizando los tiempos de carga y métricas de rendimiento en un 40%.</p>
             
@@ -497,11 +710,11 @@
             
             <p>Por lo expuesto, extiendo mi recomendación profesional y personal hacia su persona, con la certeza de que aportará alto valor técnico y humano en los nuevos retos laborales que emprenda.</p>
             
-            <p>Quedo a su disposición para atender cualquier requerimiento de validación complementaria.</p>
+            <p>Quedo a su entera disposición para atender cualquier requerimiento de validación complementaria.</p>
         </div>
 
         <div class="doc-signature">
-            <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">Atentamente,</p>
+            <p style="margin-bottom: 0.35rem; font-size: 0.85rem;">Atentamente,</p>
             <img src="postfirma_sifrah_ti.png" alt="Firma y Sello Oficial" class="doc-signature-img">
             <div class="sign-line"></div>
             <div class="sign-name" contenteditable="true">Pedro Valentino Flores Tantalean</div>
@@ -513,13 +726,10 @@
         </div>
 
         <div class="doc-footer">
-            <div class="qr-placeholder">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.sifrah.com/ref/2026-0118" alt="QR Verificación">
-            </div>
             <div class="footer-text" contenteditable="true">
-                <strong>VII NEXT S.A.C. | RUC: 20603352867</strong><br>
-                MZA. P1 LOTE 3 A.H. LA RINCONADA DE PAMPLIACI, San Juan de Miraflores, Lima, Perú<br>
-                Código de Validación: <strong>REF-SF-2026-0118</strong> | Documento emitido para fines de referencia profesional.
+                <strong>VII NEXT S.A.C. (SIFRAH) &bull; R.U.C. N° 20603352867</strong><br>
+                MZA. P1 LOTE 3 A.H. La Rinconada de Pamplona Alta, San Juan de Miraflores, Lima, Perú<br>
+                Acreditación Laboral Oficial N° <strong>REF-SF-2026-0118</strong> | Documento expedido conforme a la legislación peruana vigente.
             </div>
         </div>
     </div>
@@ -527,12 +737,16 @@
     <!-- =================================================================== -->
     <!-- 3. CERTIFICADO DE TRABAJO (PLANILLA D.L. 728) — FUXION BIOTECH -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="planilla fuxion">
+    <div class="page page-fuxion doc-item" data-category="planilla fuxion">
         <div class="doc-badge-pill badge-fuxion">Fuxion Biotech S.A.C. • Certificado de Trabajo (Planilla)</div>
 
         <div class="doc-header">
-            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo fuxion">
-            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo">
+            <div class="doc-header-meta">
+                <strong>FUXION BIOTECH S.A.C.</strong><br>
+                R.U.C. N° 20513081236 &bull; Sede Central<br>
+                <span contenteditable="true">Lima, 07 de octubre de 2026</span>
+            </div>
         </div>
 
         <div class="doc-title" contenteditable="true">CERTIFICADO DE TRABAJO</div>
@@ -540,7 +754,7 @@
         <div class="doc-body">
             <p>La que suscribe, en representación de <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong>, entidad jurídica identificada con <strong>R.U.C. N° 20513081236</strong>, con domicilio legal en Av. El Derby N° 250, Int. 1401, distrito de Santiago de Surco, provincia y departamento de Lima:</p>
             
-            <p style="font-weight: 700; margin: 1.25rem 0 0.5rem 0;" contenteditable="true">CERTIFICA:</p>
+            <p style="font-weight: 700; margin: 0.75rem 0 0.35rem 0;" contenteditable="true">CERTIFICA:</p>
 
             <p>Que, el señor <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con <strong contenteditable="true">D.N.I. N° 90162185</strong>, laboró en nuestra institución bajo contrato de trabajo a plazo determinado sujeto a modalidad (al amparo del Texto Único Ordenado del Decreto Legislativo N° 728, Ley de Productividad y Competitividad Laboral), durante el período comprendido desde el <strong contenteditable="true">06 de enero de 2025</strong> hasta el <strong contenteditable="true">14 de agosto de 2026</strong>.</p>
 
@@ -548,7 +762,7 @@
 
             <div class="doc-cargo-highlight">
                 <strong contenteditable="true">DESARROLLADOR FULL STACK SENIOR</strong>
-                <span contenteditable="true">(Área de Arquitectura de Software, E-Commerce y Soluciones TI)</span>
+                <span contenteditable="true">Área de Arquitectura de Software y Tecnologías de la Información (TI)</span>
             </div>
 
             <p>Dejamos constancia de que durante el tiempo que prestó sus servicios, el señor Montalvo demostró notable idoneidad técnica, capacidad resolutiva, responsabilidad y una conducta ética intachable, cumpliendo cabalmente con las asignaciones y objetivos corporativos encomendados.</p>
@@ -567,47 +781,67 @@
         </div>
 
         <div class="doc-footer">
-            <div class="qr-placeholder">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.fuxion.com/cert/2026-0842" alt="QR Verificación">
-            </div>
             <div class="footer-text" contenteditable="true">
-                <strong>FUXION BIOTECH S.A.C. | RUC: 20513081236</strong><br>
-                Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú | Registro Laboral N° FX-CT-2026-0842<br>
+                <strong>FUXION BIOTECH S.A.C. &bull; R.U.C. 20513081236</strong><br>
+                Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú | Registro Laboral N° <strong>FX-CT-2026-0842</strong><br>
                 Documento oficial emitido bajo el amparo de la legislación laboral peruana vigente.
             </div>
         </div>
     </div>
 
     <!-- =================================================================== -->
-    <!-- 4. CONSTANCIA DE SERVICIOS (LOCACIÓN) — FUXION BIOTECH -->
+    <!-- 4. CONSTANCIA DE SERVICIOS (LOCACIÓN) — FUXION BIOTECH (FICHA EJECUTIVA TECH) -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="locacion fuxion">
+    <div class="page page-fuxion doc-item" data-category="locacion fuxion">
         <div class="doc-badge-pill badge-fuxion">Fuxion Biotech S.A.C. • Constancia de Servicios (Locación)</div>
 
-        <div class="doc-header">
-            <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo fuxion">
-            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+        <div class="doc-header" style="align-items: flex-start; margin-bottom: 0.85rem;">
+            <div>
+                <img src="fuxion-logo-navy.png" alt="Fuxion Biotech S.A.C." class="doc-logo">
+                <div style="font-size: 0.65rem; font-weight: 700; color: #0284c7; margin-top: 0.2rem; letter-spacing: 0.05em;">DIVISIÓN DE ARQUITECTURA DE SOFTWARE & SOLUCIONES TI</div>
+            </div>
+            <div class="fuxion-meta-box">
+                <strong>FUXION BIOTECH S.A.C.</strong><br>
+                R.U.C. N° 20513081236 &bull; Sede Central Surco<br>
+                Fecha: <span contenteditable="true">Lima, 07 de octubre de 2026</span><br>
+                Registro Oficial: <strong>FX-CS-2026-0842</strong>
+            </div>
         </div>
 
-        <div class="doc-title" contenteditable="true">CONSTANCIA DE PRESTACIÓN DE SERVICIOS PROFESIONALES</div>
+        <div style="margin-bottom: 0.75rem;">
+            <div style="font-size: 1.05rem; font-weight: 700; color: #0a2540; text-transform: uppercase; letter-spacing: 0.02em;" contenteditable="true">CONSTANCIA DE PRESTACIÓN DE SERVICIOS</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #0284c7; letter-spacing: 0.04em;">MODALIDAD CONTRACTUAL: LOCACIÓN DE SERVICIOS (ART. 1764° CÓDIGO CIVIL)</div>
+        </div>
 
         <div class="doc-body">
-            <p>Por medio del presente documento, la empresa <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong>, con <strong>R.U.C. N° 20513081236</strong>, con domicilio fiscal en Av. El Derby N° 250, Int. 1401, distrito de Santiago de Surco, Lima, Perú:</p>
-            
-            <p style="font-weight: 700; margin: 1.25rem 0 0.5rem 0;" contenteditable="true">HACE CONSTAR:</p>
+            <p>Por medio del presente documento, <strong contenteditable="true">FUXION BIOTECH S.A.C.</strong> (R.U.C. N° 20513081236), con sede corporativa en Av. El Derby N° 250, Int. 1401, distrito de Santiago de Surco, Lima, certifica la prestación de servicios profesionales autónomos conforme a la siguiente ficha técnica:</p>
 
-            <p>Que, el señor <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con <strong contenteditable="true">D.N.I. N° 90162185</strong>, ha prestado servicios profesionales independientes para nuestra compañía bajo la modalidad de <strong contenteditable="true">Locación de Servicios</strong> (al amparo del artículo 1764° y concordantes del Código Civil Peruano), en el período comprendido desde <strong contenteditable="true">enero de 2025</strong> hasta <strong contenteditable="true">agosto de 2026</strong>.</p>
+            <table class="fuxion-matrix-table">
+                <tr>
+                    <td class="col-label">Profesional Titular:</td>
+                    <td class="col-val"><strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong> (D.N.I. N° <span contenteditable="true">90162185</span>)</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Cargo / Rol Asignado:</td>
+                    <td class="col-val"><strong contenteditable="true" style="color: #0a2540;">DESARROLLADOR FULL STACK SENIOR</strong></td>
+                </tr>
+                <tr>
+                    <td class="col-label">Área de Asignación:</td>
+                    <td class="col-val" contenteditable="true">Arquitectura de Software y Tecnologías de la Información (TI)</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Período de Prestación:</td>
+                    <td class="col-val" contenteditable="true">Desde <strong>enero de 2025</strong> hasta <strong>agosto de 2026</strong> (19 meses)</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Alcance del Servicio:</td>
+                    <td class="col-val" contenteditable="true">Diseño e implementación de microservicios Spring Boot, colas asíncronas Kafka, arquitectura cloud en GCP/AWS y frontends modulares e-commerce.</td>
+                </tr>
+            </table>
 
-            <p>Durante la prestación de sus servicios, el señor Montalvo estuvo a cargo de la consultoría técnica y desarrollo en calidad de:</p>
+            <p>Hacemos constar que los entregables técnicos, hitos de consultoría y acuerdos de nivel de servicio fueron cumplidos a entera satisfacción de nuestra gerencia de tecnología, evidenciando alto estándar de ingeniería, proactividad y conducta ética intachable.</p>
 
-            <div class="doc-cargo-highlight">
-                <strong contenteditable="true">ESPECIALISTA FULL STACK Y ARQUITECTURA CLOUD</strong>
-                <span contenteditable="true">(Servicios de Desarrollo de Microservicios, APIs y Frontend E-Commerce)</span>
-            </div>
-
-            <p>Hacemos constar que los entregables, hitos técnicos y compromisos adquiridos fueron ejecutados con estricta puntualidad, excelencia técnica y a plena satisfacción de nuestra gerencia de tecnología.</p>
-
-            <p>Se otorga la presente constancia a solicitud del interesado para los fines que estime por conveniente.</p>
+            <p>Se otorga la presente constancia a solicitud del interesado para los fines profesionales y laborales que estime convenientes.</p>
         </div>
 
         <div class="doc-signature">
@@ -621,13 +855,10 @@
         </div>
 
         <div class="doc-footer">
-            <div class="qr-placeholder">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.fuxion.com/serv/2026-0842" alt="QR Verificación">
-            </div>
             <div class="footer-text" contenteditable="true">
-                <strong>FUXION BIOTECH S.A.C. | RUC: 20513081236</strong><br>
-                Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú<br>
-                Constancia de Servicios N° FX-CS-2026-0842 | Válido para acreditación de experiencia profesional independiente.
+                <strong>FUXION BIOTECH S.A.C. &bull; R.U.C. 20513081236</strong><br>
+                Av. El Derby N° 250, Int. 1401, Santiago de Surco, Lima, Perú | Constancia N° <strong>FX-CS-2026-0842</strong><br>
+                Documento oficial válido para acreditación de experiencia profesional independiente.
             </div>
         </div>
     </div>
@@ -635,12 +866,16 @@
     <!-- =================================================================== -->
     <!-- 5. CERTIFICADO DE TRABAJO (PLANILLA D.L. 728) — SIFRAH -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="planilla sifrah">
+    <div class="page page-sifrah doc-item" data-category="planilla sifrah">
         <div class="doc-badge-pill badge-sifrah">VII NEXT S.A.C. (Sifrah) • Certificado de Trabajo (Planilla)</div>
 
         <div class="doc-header">
-            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo sifrah">
-            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo">
+            <div class="doc-header-meta">
+                <strong>VII NEXT S.A.C. &bull; SIFRAH</strong><br>
+                R.U.C. N° 20603352867 &bull; Retail & Comercio<br>
+                <span contenteditable="true">Lima, 03 de octubre de 2026</span>
+            </div>
         </div>
 
         <div class="doc-title" contenteditable="true">CERTIFICADO DE TRABAJO</div>
@@ -648,7 +883,7 @@
         <div class="doc-body">
             <p>La empresa <strong contenteditable="true">VII NEXT S.A.C.</strong> (SIFRAH), identificada con <strong>R.U.C. N° 20603352867</strong>, con domicilio fiscal en Mza. P1 Lote 3 A.H. La Rinconada de Pamplona Alta, distrito de San Juan de Miraflores, Lima:</p>
             
-            <p style="font-weight: 700; margin: 1.25rem 0 0.5rem 0;" contenteditable="true">CERTIFICA:</p>
+            <p style="font-weight: 700; margin: 0.75rem 0 0.35rem 0;" contenteditable="true">CERTIFICA:</p>
 
             <p>Que, el señor <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con <strong contenteditable="true">D.N.I. N° 72481940</strong>, laboró en nuestra empresa bajo el régimen laboral de la actividad privada (Decreto Legislativo N° 728), durante el período comprendido desde el <strong contenteditable="true">09 de enero de 2023</strong> hasta el <strong contenteditable="true">17 de enero de 2025</strong>.</p>
 
@@ -656,7 +891,7 @@
 
             <div class="doc-cargo-highlight">
                 <strong contenteditable="true">ANALISTA PROGRAMADOR FULL STACK</strong>
-                <span contenteditable="true">(Área de Tecnología de la Información y Desarrollo de Sistemas)</span>
+                <span contenteditable="true">Área de Tecnología de la Información y Desarrollo de Sistemas</span>
             </div>
 
             <p>Durante el tiempo en mención, demostró destacada capacidad técnica, compromiso, proactividad y un correcto espíritu colaborativo, observando una conducta intachable en todas las labores asignadas.</p>
@@ -675,47 +910,53 @@
         </div>
 
         <div class="doc-footer">
-            <div class="qr-placeholder">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.sifrah.com/cert/2025-0118" alt="QR Verificación">
-            </div>
             <div class="footer-text" contenteditable="true">
-                <strong>VII NEXT S.A.C. | RUC: 20603352867</strong><br>
+                <strong>VII NEXT S.A.C. (SIFRAH) &bull; R.U.C. N° 20603352867</strong><br>
                 MZA. P1 LOTE 3 A.H. LA RINCONADA DE PAMPLIACI, San Juan de Miraflores, Lima, Perú<br>
-                Certificado de Trabajo N° SF-CT-2025-0118 | Emitido para fines de acreditación laboral formal.
+                Certificado de Trabajo N° <strong>SF-CT-2025-0118</strong> | Emitido para fines de acreditación laboral formal.
             </div>
         </div>
     </div>
 
     <!-- =================================================================== -->
-    <!-- 6. CONSTANCIA DE SERVICIOS (LOCACIÓN) — SIFRAH -->
+    <!-- 6. CONSTANCIA DE SERVICIOS (LOCACIÓN) — SIFRAH (FORMATO NOTARIAL TRADICIONAL) -->
     <!-- =================================================================== -->
-    <div class="page doc-item" data-category="locacion sifrah">
+    <div class="page page-sifrah doc-item" data-category="locacion sifrah">
         <div class="doc-badge-pill badge-sifrah">VII NEXT S.A.C. (Sifrah) • Constancia de Servicios (Locación)</div>
 
-        <div class="doc-header">
-            <img src="sifrah-logo.png" alt="Sifrah" class="doc-logo sifrah">
-            <div class="doc-date" contenteditable="true">Lima, 03 de octubre de 2026</div>
+        <div class="sifrah-header-centered">
+            <img src="sifrah-logo.png" alt="Sifrah" style="height: 32px; object-fit: contain; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; font-size: 0.95rem; color: #1c1917; letter-spacing: 0.05em;">VII NEXT S.A.C. &bull; SIFRAH</div>
+            <div style="font-size: 0.75rem; color: #78716c;">R.U.C. N° 20603352867 &bull; DEPARTAMENTO DE RECURSOS HUMANOS Y ADMINISTRACIÓN</div>
         </div>
 
-        <div class="doc-title" contenteditable="true">CONSTANCIA DE PRESTACIÓN DE SERVICIOS PROFESIONALES</div>
+        <div style="text-align: right; font-size: 0.8rem; color: #78716c; margin-bottom: 0.35rem;" contenteditable="true">
+            Lima, 03 de octubre de 2026
+        </div>
+
+        <div class="sifrah-spaced-title" contenteditable="true">
+            C O N S T A N C I A &nbsp;&nbsp; D E &nbsp;&nbsp; S E R V I C I O S
+        </div>
 
         <div class="doc-body">
-            <p>Por medio del presente documento, <strong contenteditable="true">VII NEXT S.A.C.</strong> (SIFRAH), con <strong>R.U.C. N° 20603352867</strong>, domiciliada en Mza. P1 Lote 3 A.H. La Rinconada de Pamplona Alta, San Juan de Miraflores, Lima:</p>
-            
-            <p style="font-weight: 700; margin: 1.25rem 0 0.5rem 0;" contenteditable="true">HACE CONSTAR:</p>
+            <p style="font-weight: 700; color: #1c1917;" contenteditable="true">LA JEFA DE RECURSOS HUMANOS Y ADMINISTRACIÓN DE VII NEXT S.A.C. QUE SUSCRIBE:</p>
 
-            <p>Que, el señor <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con <strong contenteditable="true">D.N.I. N° 72481940</strong>, prestó servicios profesionales independientes bajo la modalidad contractual de <strong contenteditable="true">Locación de Servicios</strong>, en el período comprendido desde <strong contenteditable="true">enero de 2023</strong> hasta <strong contenteditable="true">enero de 2025</strong>.</p>
-
-            <p>Durante dicho período, desempeñó funciones de consultoría y desarrollo en calidad de:</p>
-
-            <div class="doc-cargo-highlight">
-                <strong contenteditable="true">CONSULTOR Y DESARROLLADOR FULL STACK</strong>
-                <span contenteditable="true">(Servicios de Integración de Pasarelas, Backend Transaccional y UI E-Commerce)</span>
+            <div style="text-align: center; font-weight: 700; font-size: 0.95rem; color: #1c1917; margin: 0.5rem 0;" contenteditable="true">
+                HACE CONSTAR QUE:
             </div>
 
-            <p>Se deja expresa constancia de que los servicios fueron prestados con puntualidad, solvencia técnica y a entera conformidad de las áreas usuarias y técnicas de nuestra organización.</p>
+            <p>El señor <strong contenteditable="true">JORDY JOSEPH MONTALVO ALFARO</strong>, identificado con <strong contenteditable="true">D.N.I. N° 72481940</strong>, prestó servicios profesionales independientes bajo la modalidad contractual de <strong contenteditable="true">Locación de Servicios</strong> (al amparo del artículo 1764° y concordantes del Código Civil Peruano), en el período comprendido desde <strong contenteditable="true">enero de 2023</strong> hasta <strong contenteditable="true">enero de 2025</strong>.</p>
 
-            <p>Se expide la presente a solicitud del interesado para los fines que estime conveniente.</p>
+            <p>Habiendo desempeñado sus funciones técnicas y profesionales con alto rigor, dedicación y solvencia en el puesto de:</p>
+
+            <div class="sifrah-cert-placa">
+                <strong contenteditable="true">ANALISTA PROGRAMADOR FULL STACK</strong>
+                <span contenteditable="true">Área de Tecnología de la Información y Desarrollo de Sistemas</span>
+            </div>
+
+            <p>Se deja expresa constancia de que durante dicho período, el señor Montalvo demostró destacada solvencia técnica en el desarrollo de servicios backend, integración de pasarelas de pago y soporte a la plataforma e-commerce, observando siempre una conducta intachable y alta responsabilidad.</p>
+
+            <p>A solicitud del interesado y para los fines que estime conveniente, se expide la presente constancia.</p>
         </div>
 
         <div class="doc-signature">
@@ -729,13 +970,10 @@
         </div>
 
         <div class="doc-footer">
-            <div class="qr-placeholder">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://verificacion.sifrah.com/serv/2025-0118" alt="QR Verificación">
-            </div>
             <div class="footer-text" contenteditable="true">
-                <strong>VII NEXT S.A.C. | RUC: 20603352867</strong><br>
+                <strong>VII NEXT S.A.C. (SIFRAH) &bull; R.U.C. N° 20603352867</strong><br>
                 MZA. P1 LOTE 3 A.H. LA RINCONADA DE PAMPLIACI, San Juan de Miraflores, Lima, Perú<br>
-                Constancia de Servicios N° SF-CS-2025-0118 | Documento oficial para fines de referencia profesional.
+                Constancia Oficial Registrada bajo el Folio <strong>SF-CS-2025-0118</strong> | Expedido conforme a ley.
             </div>
         </div>
     </div>

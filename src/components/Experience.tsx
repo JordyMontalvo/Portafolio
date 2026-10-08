@@ -19,10 +19,10 @@ const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
-      role: "Lead Shopify & E-Commerce Developer",
-      company: "Fuxion",
+      role: "Senior Full Stack & Lead E-Commerce Developer",
+      company: "Fuxion Biotech",
       location: "Remote (Global)",
-      period: "2022 - Present",
+      period: "2025 - 2026",
       impactHighlight: "60% Load Time Reduction & Enterprise ERP Automation",
       description: [
         "Technical leadership in architecting and scaling enterprise storefronts on Shopify Plus and WooCommerce.",
@@ -35,10 +35,10 @@ const Experience: React.FC = () => {
     },
     {
       id: 2,
-      role: "Senior Full Stack & CMS Engineer",
-      company: "Corporate Consulting",
+      role: "Full Stack Developer & Systems Analyst",
+      company: "Sifrah (VII NEXT)",
       location: "Lima, Peru",
-      period: "2020 - 2022",
+      period: "2023 - 2025",
       impactHighlight: "50+ Production Platforms Delivered & Sub-1.2s LCP",
       description: [
         "Comprehensive architecture of multi-language enterprise web platforms using WordPress, PHP, and ACF Pro.",
